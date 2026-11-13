@@ -1,0 +1,332 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact Us | PB32 SHOES</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: #f7f7f7;
+    color: #111;
+}
+
+header {
+    background: #080808;
+    color: white;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 900;
+}
+
+.logo span {
+    color: #e5a900;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #e5a900;
+}
+
+.hero {
+    background: linear-gradient(#000b, #000b),
+    url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1400') center/cover;
+    padding: 85px 20px;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 900;
+}
+
+.hero h1 span {
+    color: #e5a900;
+}
+
+.hero p {
+    margin-top: 15px;
+    color: #ddd;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 65px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 35px;
+}
+
+.contact-info {
+    background: #111;
+    color: white;
+    padding: 40px 30px;
+    border-radius: 10px;
+}
+
+.contact-info h2 {
+    font-size: 27px;
+    margin-bottom: 15px;
+}
+
+.contact-info > p {
+    color: #bbb;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.info-box {
+    margin: 25px 0;
+}
+
+.info-box h3 {
+    color: #e5a900;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.info-box p {
+    color: #ddd;
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.contact-form {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px #0000000c;
+}
+
+.contact-form h2 {
+    font-size: 27px;
+    margin-bottom: 25px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 13px;
+    margin-bottom: 9px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    font-size: 14px;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #e5a900;
+}
+
+.input-group textarea {
+    height: 130px;
+    resize: vertical;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background: #e5a900;
+    color: #111;
+    border: none;
+    border-radius: 5px;
+    font-weight: 800;
+    font-size: 15px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    background: #111;
+    color: white;
+}
+
+footer {
+    background: #080808;
+    color: white;
+    text-align: center;
+    padding: 35px 15px;
+}
+
+footer span {
+    color: #e5a900;
+}
+
+footer p {
+    color: #aaa;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+@media(max-width: 750px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 0 7px;
+        font-size: 11px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        margin: 35px auto;
+    }
+
+    .contact-form {
+        padding: 25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">PB32 <span>SHOES.</span></div>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="index.html#categories">CATEGORIES</a>
+        <a href="index.html#products">COLLECTION</a>
+        <a href="index.html#about">ABOUT</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>CONTACT <span>US</span></h1>
+    <p>We would love to hear from you. Get in touch with PB32 SHOES!</p>
+</section>
+
+<div class="container">
+
+    <div class="contact-info">
+
+        <h2>Get In Touch</h2>
+
+        <p>
+            Have any questions about our shoes or products?
+            Feel free to contact us. We are always happy to help!
+        </p>
+
+        <div class="info-box">
+            <h3>📍 Our Location</h3>
+            <p>Add Your Shop Address Here</p>
+        </div>
+
+        <div class="info-box">
+            <h3>📞 Phone Number</h3>
+            <p>Add Your Phone Number Here</p>
+        </div>
+
+        <div class="info-box">
+            <h3>✉ Email Address</h3>
+            <p>your-email@example.com</p>
+        </div>
+
+        <div class="info-box">
+            <h3>🕒 Working Hours</h3>
+            <p>Monday - Saturday<br>10:00 AM - 9:00 PM</p>
+        </div>
+
+    </div>
+
+    <div class="contact-form">
+
+        <h2>Send Us A Message</h2>
+
+        <form id="contactForm">
+
+            <div class="input-group">
+                <label>Your Name</label>
+                <input type="text" placeholder="Enter your name" required>
+            </div>
+
+            <div class="input-group">
+                <label>Your Email</label>
+                <input type="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="input-group">
+                <label>Phone Number</label>
+                <input type="tel" placeholder="Enter your phone number" required>
+            </div>
+
+            <div class="input-group">
+                <label>Your Message</label>
+                <textarea placeholder="Write your message here..." required></textarea>
+            </div>
+
+            <button type="submit">SEND MESSAGE →</button>
+
+        </form>
+
+        <p id="messageStatus" style="margin-top:15px;color:#b47f00;"></p>
+
+    </div>
+
+</div>
+
+<footer>
+    <h2>PB32 <span>SHOES.</span></h2>
+    <p>Step Into Style. Walk With Confidence.</p>
+    <p>© 2026 PB32 SHOES. All Rights Reserved.</p>
+</footer>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    document.getElementById("messageStatus").textContent =
+    "Thank you! Your form is ready, but online message delivery is not connected yet.";
+
+    this.reset();
+});
+</script>
+
+</body>
+</html>
