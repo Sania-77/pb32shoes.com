@@ -1,0 +1,452 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PB32 SHOES | Collection</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f6f6f6;
+    color: #111;
+}
+
+header {
+    background: #080808;
+    color: white;
+    padding: 22px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 900;
+}
+
+.logo span {
+    color: #e5a900;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #e5a900;
+}
+
+.hero {
+    background: linear-gradient(90deg, #080808, #333);
+    color: white;
+    text-align: center;
+    padding: 65px 15px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    letter-spacing: 2px;
+}
+
+.hero h1 span {
+    color: #e5a900;
+}
+
+.hero p {
+    color: #ccc;
+    margin-top: 15px;
+}
+
+.filters {
+    text-align: center;
+    padding: 35px 15px;
+}
+
+.search {
+    width: 90%;
+    max-width: 450px;
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 22px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.buttons button {
+    padding: 12px 22px;
+    background: #111;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.buttons button:hover,
+.buttons button.active {
+    background: #e5a900;
+    color: black;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    padding: 20px 7% 65px;
+}
+
+.card {
+    background: white;
+    border-radius: 9px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 3px 12px #0001;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px #0002;
+}
+
+.product-image {
+    height: 210px;
+    width: 100%;
+    object-fit: contain;
+    background: #fafafa;
+    border-radius: 6px;
+}
+
+.placeholder {
+    height: 210px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 65px;
+    background: #fafafa;
+}
+
+.card h3 {
+    font-size: 15px;
+    margin: 15px 0;
+}
+
+.price {
+    color: #b47f00;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.card a {
+    display: block;
+    padding: 12px;
+    background: #111;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.card a:hover {
+    background: #e5a900;
+    color: black;
+}
+
+.empty {
+    display: none;
+    text-align: center;
+    padding: 30px;
+}
+
+footer {
+    background: #080808;
+    color: white;
+    text-align: center;
+    padding: 35px;
+}
+
+footer span {
+    color: #e5a900;
+}
+
+@media(max-width: 850px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 550px) {
+    header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav a {
+        margin: 0 7px;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 29px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">PB32 <span>SHOES.</span></div>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="categories.html">CATEGORIES</a>
+        <a href="collection.html">COLLECTION</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>OUR <span>COLLECTION.</span></h1>
+    <p>Discover the latest footwear styles at PB32 SHOES.</p>
+</section>
+
+<section class="filters">
+
+    <input
+        type="text"
+        id="search"
+        class="search"
+        placeholder="Search your favourite shoes..."
+    >
+
+    <div class="buttons">
+        <button class="active"
+        onclick="filterProducts('all',this)">
+        ALL
+        </button>
+
+        <button onclick="filterProducts('men',this)">
+        MEN
+        </button>
+
+        <button onclick="filterProducts('women',this)">
+        WOMEN
+        </button>
+
+        <button onclick="filterProducts('premium',this)">
+        PREMIUM
+        </button>
+    </div>
+
+</section>
+
+<div class="products" id="productList"></div>
+
+<div class="empty" id="empty">
+    No products found.
+</div>
+
+<footer>
+    <h2>PB32 <span>SHOES.</span></h2>
+    <p>Step Into Style. Walk With Confidence.</p>
+    <p>© 2026 PB32 SHOES. All Rights Reserved.</p>
+</footer>
+
+<script>
+
+const products = [
+
+{
+name: "TRASKO Men's Running Shoes",
+category: "men",
+price: 1459,
+link: "https://www.campusshoes.com/products/trasko-turtle-dove-navy-mens-running-shoes"
+},
+
+{
+name: "ROLIM Men's Sneakers",
+category: "men",
+price: 1459,
+link: "https://www.campusshoes.com/products/rolim-wht-grn-mens-sneakers"
+},
+
+{
+name: "ESTILO Men's Sneakers",
+category: "men",
+price: 1389,
+link: "https://www.campusshoes.com/products/estilo-antq-wht-sea-blu-mens-sneakers"
+},
+
+{
+name: "ENCORE Black Men's Sneakers",
+category: "men",
+price: 1589,
+link: "https://www.campusshoes.com/products/encore-blk-d-gry-mens-sneakers"
+},
+
+{
+name: "ENCORE White Men's Sneakers",
+category: "men",
+price: 1589,
+link: "https://www.campusshoes.com/products/encore-wht-vallt-blue-mens-sneakers"
+},
+
+{
+name: "TRASKO Black Men's Running Shoes",
+category: "men",
+price: 1459,
+link: "https://www.campusshoes.com/products/trasko-black-d-gry-mens-running-shoes"
+},
+
+{
+name: "KRIVO Men's Running Shoes",
+category: "men",
+price: 1159,
+link: "https://www.campusshoes.com/products/krivo-wht-r-slate-mens-running-shoes"
+},
+
+{
+name: "FYBER Men's Running Shoes",
+category: "men",
+price: 1149,
+link: "https://www.campusshoes.com/products/fyber-l-grey-d-grey-mens-running-shoes"
+},
+
+{
+name: "AMBIT Women's Sneakers",
+category: "women",
+price: 1259,
+link: "https://www.campusshoes.com/products/ambit-wht-blk-womens-sneakers"
+},
+
+{
+name: "CYMBAL Women's Running Shoes",
+category: "women",
+price: 1549,
+link: "https://www.campusshoes.com/products/cymbal-h-pink-wan-blue-womens-running-shoes"
+},
+
+{
+name: "VIBRO Women's Sneakers",
+category: "women",
+price: 1199,
+link: "https://www.campusshoes.com/products/vibro-blk-womens-sneakers"
+},
+
+{
+name: "New Balance 204V",
+category: "premium",
+price: 12999,
+link: "https://www.superkicks.in/products/new-balance-204v-pistachio-butter-with-morel-and-black-cement"
+},
+
+{
+name: "Air Jordan 1 Mid",
+category: "premium",
+price: 11495,
+link: "https://www.superkicks.in/products/jordan-air-jordan-1-mid-black-phantom-palomino-university-red?variant=48999393919227"
+},
+
+{
+name: "Nike Dunk Low Retro",
+category: "premium",
+price: 8295,
+link: "https://www.superkicks.in/products/nike-dunk-low-retro-white-black-white"
+}
+
+];
+
+let currentFilter = "all";
+
+function renderProducts() {
+
+    const list = document.getElementById("productList");
+    const search = document.getElementById("search")
+        .value.toLowerCase();
+
+    list.innerHTML = "";
+
+    const filtered = products.filter(product => {
+
+        const categoryMatch =
+            currentFilter === "all" ||
+            product.category === currentFilter;
+
+        const searchMatch =
+            product.name.toLowerCase().includes(search);
+
+        return categoryMatch && searchMatch;
+    });
+
+    document.getElementById("empty").style.display =
+        filtered.length ? "none" : "block";
+
+    filtered.forEach(product => {
+
+        const card = document.createElement("div");
+        card.className = "card";
+
+        card.innerHTML = `
+            <div class="placeholder">👟</div>
+            <h3>${product.name}</h3>
+            <div class="price">
+                ₹${product.price.toLocaleString("en-IN")}
+            </div>
+            <a href="${product.link}"
+               target="_blank"
+               rel="noopener noreferrer">
+               VIEW PRODUCT
+            </a>
+        `;
+
+        list.appendChild(card);
+    });
+}
+
+function filterProducts(category,button) {
+
+    currentFilter = category;
+
+    document.querySelectorAll(".buttons button")
+        .forEach(btn => btn.classList.remove("active"));
+
+    button.classList.add("active");
+
+    renderProducts();
+}
+
+document.getElementById("search")
+    .addEventListener("input",renderProducts);
+
+renderProducts();
+
+</script>
+
+</body>
+</html>
