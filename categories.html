@@ -311,11 +311,18 @@ function showCategory(category, button) {
     });
 }
 
-// Show Men shoes when page opens
-showCategory(
-    "men",
-    document.querySelector(".buttons button")
-);
+const params = new URLSearchParams(window.location.search);
+
+const selectedCategory = params.get("category") || "men";
+
+const selectedButton = [...document.querySelectorAll(".buttons button")]
+    .find(btn => btn.getAttribute("onclick").includes("'" + selectedCategory + "'"));
+
+if (selectedButton) {
+    showCategory(selectedCategory, selectedButton);
+} else {
+    showCategory("men", document.querySelector(".buttons button"));
+}
 
 </script>
 
