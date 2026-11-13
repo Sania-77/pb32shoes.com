@@ -294,7 +294,7 @@ function showCategory(category, button) {
         card.className = "card";
 
         card.innerHTML = `
-            <div class="shoe-icon">👟</div>
+            <img class="product-image" src="${product.image}" alt="${product.name}">
             <h3>${product.name}</h3>
             <p class="price">
                 ₹${product.price.toLocaleString("en-IN")}
