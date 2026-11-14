@@ -1,29 +1,28 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Categories | PB32 SHOES</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<title>PB32 SHOES | Categories</title>
 
 <style>
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 body {
-    background: #f7f7f7;
-    color: #111;
+    background: #f8f7ff;
+    color: #24213b;
 }
 
+/* HEADER */
 header {
-    background: #080808;
+    background: #252044;
     color: white;
     padding: 20px 7%;
     display: flex;
@@ -39,200 +38,203 @@ header {
 }
 
 .logo span {
-    color: #d4af5a;
+    color: #ffcf70;
 }
 
 nav {
     display: flex;
+    gap: 20px;
     flex-wrap: wrap;
-    gap: 18px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    font-size: 12px;
-    font-weight: 700;
+    font-size: 13px;
+    font-weight: bold;
 }
 
 nav a:hover {
-    color: #d4af5a;
+    color: #ffcf70;
 }
 
 /* HERO */
-
 .hero {
-    background: linear-gradient(120deg, #080808, #292929);
-    color: white;
+    padding: 65px 20px;
     text-align: center;
-    padding: 85px 15px;
+    background: linear-gradient(120deg, #dcd5ff, #fce6d9);
+}
+
+.hero small {
+    color: #6554a5;
+    font-weight: bold;
+    letter-spacing: 3px;
 }
 
 .hero h1 {
-    font-size: 45px;
-    font-weight: 900;
-    letter-spacing: 2px;
+    font-size: 43px;
+    margin: 15px 0;
+    color: #29234c;
 }
 
 .hero h1 span {
-    color: #d4af5a;
+    color: #7859c9;
 }
 
 .hero p {
-    color: #ccc;
-    margin-top: 17px;
-    font-size: 14px;
+    color: #5f5a70;
+    font-size: 16px;
+    line-height: 1.7;
 }
 
-.hero a {
-    display: inline-block;
-    margin-top: 28px;
-    padding: 14px 28px;
-    background: #d4af5a;
-    color: #080808;
-    text-decoration: none;
-    font-weight: 800;
-    border-radius: 4px;
-}
-
-/* CATEGORY INTRO */
-
-.section-title {
+/* CATEGORY SECTION */
+.category-section {
+    padding: 35px 7% 10px;
     text-align: center;
-    padding: 55px 15px 20px;
 }
 
-.section-title h2 {
-    font-size: 30px;
-    font-weight: 900;
+.category-section h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
 }
 
-.section-title h2 span {
-    color: #bd902d;
+.category-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
-.section-title p {
-    color: #777;
-    margin-top: 12px;
-    font-size: 13px;
+.category-buttons button {
+    padding: 12px 23px;
+    border: 1px solid #d6ccef;
+    border-radius: 30px;
+    background: white;
+    color: #45366e;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.category-buttons button:hover,
+.category-buttons button.active {
+    background: #7054b8;
+    color: white;
+    border-color: #7054b8;
 }
 
 /* SEARCH */
-
 .search-area {
+    padding: 25px 15px;
     text-align: center;
-    padding: 20px 15px;
 }
 
 .search-area input {
     width: 90%;
     max-width: 450px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    padding: 15px 20px;
+    border: 1px solid #d8d0ed;
+    border-radius: 30px;
     outline: none;
-    font-size: 14px;
+    font-size: 15px;
 }
 
-/* FILTERS */
-
-.filters {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    padding: 10px 15px 35px;
+.search-area input:focus {
+    border-color: #7054b8;
 }
 
-.filters button {
-    background: #111;
-    color: white;
-    border: none;
-    padding: 12px 22px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: 700;
-}
-
-.filters button:hover,
-.filters button.active {
-    background: #d4af5a;
-    color: #111;
+.count {
+    text-align: center;
+    color: #716b83;
+    margin-bottom: 20px;
 }
 
 /* PRODUCTS */
-
 .products {
+    padding: 10px 7% 70px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 23px;
-    padding: 10px 7% 70px;
+    gap: 24px;
 }
 
-.product-card {
+.card {
     background: white;
-    border-radius: 9px;
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 3px 15px #00000012;
+    box-shadow: 0 5px 18px #30245b12;
     transition: .3s;
+    border: 1px solid #eeeaf7;
 }
 
-.product-card:hover {
+.card:hover {
     transform: translateY(-7px);
-    box-shadow: 0 10px 25px #00000020;
+    box-shadow: 0 12px 25px #30245b20;
 }
 
-.product-card img {
+.image-box {
+    height: 205px;
+    background: #f1eff9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.product-image {
     width: 100%;
-    height: 220px;
-    object-fit: cover;
-    background: #eee;
-    display: block;
+    height: 100%;
+    object-fit: contain;
+    padding: 12px;
 }
 
-.product-info {
+.fallback {
+    font-size: 75px;
+}
+
+.details {
     padding: 17px;
-    text-align: center;
 }
 
 .tag {
     display: inline-block;
-    background: #fff1ce;
-    color: #8a650d;
     padding: 6px 12px;
     border-radius: 20px;
-    font-size: 10px;
-    font-weight: 800;
+    background: #eee8ff;
+    color: #7054b8;
+    font-size: 11px;
+    font-weight: bold;
     text-transform: uppercase;
 }
 
-.product-info h3 {
-    font-size: 14px;
+.details h3 {
+    font-size: 15px;
+    min-height: 38px;
     margin: 13px 0;
-    min-height: 35px;
+    line-height: 1.4;
 }
 
 .price {
-    font-size: 21px;
-    color: #a97915;
-    font-weight: 900;
+    font-size: 22px;
+    font-weight: bold;
+    color: #6046a4;
     margin-bottom: 15px;
 }
 
-.product-info a {
+.buy-btn {
     display: block;
-    background: #080808;
-    color: white;
+    text-align: center;
     padding: 12px;
+    border-radius: 7px;
+    background: #29234c;
+    color: white;
     text-decoration: none;
-    border-radius: 4px;
-    font-size: 12px;
-    font-weight: 800;
+    font-weight: bold;
+    font-size: 13px;
+    transition: .3s;
 }
 
-.product-info a:hover {
-    background: #d4af5a;
-    color: #111;
+.buy-btn:hover {
+    background: #7859c9;
 }
 
 .empty {
@@ -240,29 +242,23 @@ nav a:hover {
     text-align: center;
     padding: 40px;
     color: #777;
+    grid-column: 1 / -1;
 }
 
 /* FOOTER */
-
 footer {
-    background: #080808;
+    background: #252044;
     color: white;
+    padding: 35px 15px;
     text-align: center;
-    padding: 40px 15px;
     line-height: 2;
 }
 
-footer h2 span {
-    color: #d4af5a;
-}
-
-footer p {
-    color: #bbb;
-    font-size: 13px;
+footer span {
+    color: #ffcf70;
 }
 
 /* RESPONSIVE */
-
 @media(max-width: 950px) {
     .products {
         grid-template-columns: repeat(2, 1fr);
@@ -271,7 +267,7 @@ footer p {
 
 @media(max-width: 550px) {
     header {
-        flex-direction: column;
+        justify-content: center;
         text-align: center;
     }
 
@@ -281,7 +277,7 @@ footer p {
     }
 
     nav a {
-        font-size: 10px;
+        font-size: 11px;
     }
 
     .hero h1 {
@@ -290,12 +286,8 @@ footer p {
 
     .products {
         grid-template-columns: 1fr;
-        padding-left: 9%;
-        padding-right: 9%;
-    }
-
-    .section-title h2 {
-        font-size: 24px;
+        padding-left: 8%;
+        padding-right: 8%;
     }
 }
 </style>
@@ -317,42 +309,37 @@ footer p {
 </header>
 
 <section class="hero">
-    <h1>SHOP BY <span>CATEGORY.</span></h1>
-    <p>Find your perfect pair. Discover your style with PB32 SHOES.</p>
-    <a href="product.html">EXPLORE COLLECTION</a>
+    <small>FIND YOUR PERFECT FIT</small>
+    <h1>EXPLORE <span>CATEGORIES</span></h1>
+    <p>Discover your favourite footwear. Find your style, choose your comfort<br>
+    and step forward with PB32 SHOES.</p>
 </section>
 
-<section class="section-title">
-    <h2>OUR <span>CATEGORIES</span></h2>
-    <p>Explore stylish footwear for every occasion.</p>
+<section class="category-section">
+    <h2>SHOP BY CATEGORY</h2>
+
+    <div class="category-buttons">
+        <button class="active" onclick="filterProducts('all',this)">ALL SHOES</button>
+        <button onclick="filterProducts('men',this)">MEN</button>
+        <button onclick="filterProducts('women',this)">WOMEN</button>
+        <button onclick="filterProducts('premium',this)">PREMIUM</button>
+        <button onclick="filterProducts('sports',this)">SPORTS</button>
+    </div>
 </section>
 
 <div class="search-area">
-    <input
-        type="text"
-        id="search"
-        placeholder="Search shoes by name..."
-    >
+    <input type="text" id="search"
+    placeholder="Search shoes by name...">
 </div>
 
-<div class="filters">
-    <button class="active" onclick="filterProducts('all',this)">ALL SHOES</button>
-    <button onclick="filterProducts('men',this)">MEN</button>
-    <button onclick="filterProducts('women',this)">WOMEN</button>
-    <button onclick="filterProducts('sports',this)">SPORTS</button>
-    <button onclick="filterProducts('premium',this)">PREMIUM</button>
-</div>
+<div class="count" id="count"></div>
 
-<div class="products" id="productGrid"></div>
-
-<div class="empty" id="empty">
-    <h3>No Shoes Found!</h3>
-    <p>Try searching with another name.</p>
-</div>
+<section class="products" id="productList">
+</section>
 
 <footer>
     <h2>PB32 <span>SHOES.</span></h2>
-    <p>Step Into Style. Walk With Confidence.</p>
+    <p>Find Your Style. Feel Your Comfort.</p>
     <p>© 2026 PB32 SHOES. All Rights Reserved.</p>
 </footer>
 
@@ -361,99 +348,115 @@ footer p {
 const products = [
 
 {
-name: "Classic Red Sneakers",
+name: "Men's Running Shoes",
 category: "men",
-price: 1499,
-image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600",
-link: "product.html"
+type: "sports",
+price: 1459,
+image: "https://th.bing.com/th/id/OIP.-25DT6-n_ENbr3Uy5v2PtQHaJ4?w=142&h=190&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
 },
 
 {
-name: "Premium White Sneakers",
-category: "premium",
-price: 2499,
-image: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=600",
-link: "product.html"
+name: "Men's Shoes",
+category: "men",
+type: "casual",
+price: 1459,
+image: "https://tse1.mm.bing.net/th/id/OIP.V3kAZHRQzsw93eoNmhHy-AHaI4?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
 },
 
 {
-name: "Urban Sports Shoes",
-category: "sports",
-price: 1799,
-image: "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=600",
-link: "product.html"
+name: "Black Men's Shoes",
+category: "men",
+type: "premium",
+price: 1789,
+image: "https://th.bing.com/th/id/OIP.FH-uY0Nmg5XJS9IWUOc7zwHaHa?w=183&h=183&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
 },
 
 {
-name: "Women's Fashion Sneakers",
+name: "Men's Shoes",
+category: "men",
+type: "casual",
+price: 1589,
+image: "https://th.bing.com/th/id/OIP.6VFn3CCNXay2EqkpICEcAwHaJ4?w=134&h=183&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+},
+
+{
+name: "ENCORE White Men's Sneakers",
+category: "men",
+type: "casual",
+price: 1289,
+image: "https://th.bing.com/th/id/OIP.l7xvkN_8Ku-vmq0pJqlZmwHaJ4?w=133&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+},
+
+{
+name: "TRASKO Women's Shoes",
 category: "women",
-price: 1599,
-image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600",
-link: "product.html"
+type: "casual",
+price: 1459,
+image: ""
 },
 
 {
-name: "Black Running Shoes",
-category: "sports",
-price: 1899,
-image: "https://images.unsplash.com/photo-1539185441755-769473a23570?w=600",
-link: "product.html"
-},
-
-{
-name: "Street Style Sneakers",
+name: "KRIVO Men's Running Shoes",
 category: "men",
-price: 1299,
-image: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=600",
-link: "product.html"
+type: "sports",
+price: 1159,
+image: "https://th.bing.com/th/id/OIP.pXJVNw2Ngec7MwtxE--3YQHaFW?w=257&h=185&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
 },
 
 {
-name: "Women's Casual Shoes",
+name: "Women's Heel",
 category: "women",
-price: 1399,
-image: "https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?w=600",
-link: "product.html"
+type: "casual",
+price: 1149,
+image: "https://th.bing.com/th/id/OIP.fMQAzLwDstk0oiR9ovLX_wHaHa?w=155&h=150&c=6&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
 },
 
 {
-name: "Premium Running Shoes",
-category: "premium",
-price: 2999,
-image: "https://images.unsplash.com/photo-1552346154-21d32810aba3?w=600",
-link: "product.html"
+name: "AMBIT Women's Sneakers",
+category: "women",
+type: "premium",
+price: 1959,
+image: "https://th.bing.com/th/id/OIP.UKzOHGC6XG8Sk098Sv3TrgHaHa?w=190&h=187&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
 },
 
 {
-name: "Everyday White Shoes",
-category: "men",
+name: "CYMBAL Women's Running Shoes",
+category: "women",
+type: "sports",
+price: 1549,
+image: "https://th.bing.com/th/id/OIP.kPcjE25ejlpIgztH9qzRQwHaHa?w=175&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+},
+
+{
+name: "Women's Belly",
+category: "women",
+type: "casual",
 price: 1199,
-image: "https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?w=600",
-link: "product.html"
+image: "https://th.bing.com/th?q=Fancy+Black+Dress+Shoes+for+Women&w=120&h=120&c=1&rs=1&qlt=70&r=0&o=7&cb=1&dpr=1.3&pid=InlineBlock&rm=3&mkt=en-IN&cc=IN&setlang=en&adlt=moderate&t=1&mw=247"
 },
 
 {
-name: "Women's Sports Sneakers",
-category: "sports",
-price: 1699,
-image: "https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=600",
-link: "product.html"
-},
-
-{
-name: "Premium Street Sneakers",
+name: "New Balance 204V",
 category: "premium",
-price: 3499,
-image: "https://images.unsplash.com/photo-1552346154-21d32810aba3?w=600",
-link: "product.html"
+type: "premium",
+price: 12999,
+image: ""
 },
 
 {
-name: "Classic Women's Sneakers",
-category: "women",
-price: 1499,
-image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600",
-link: "product.html"
+name: "Air Jordan 1 Mid",
+category: "premium",
+type: "premium",
+price: 11495,
+image: "https://th.bing.com/th/id/OIP.2SPIY-DN9ofnKGZZCahlvAHaE0?w=205&h=133&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+},
+
+{
+name: "Nike Dunk Low Retro",
+category: "premium",
+type: "premium",
+price: 8295,
+image: "https://th.bing.com/th/id/OIP.RcY5ByT8KHayuug280uO1wHaHa?w=205&h=205&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
 }
 
 ];
@@ -462,65 +465,76 @@ let currentFilter = "all";
 
 function renderProducts() {
 
-    const grid = document.getElementById("productGrid");
-    const search = document.getElementById("search")
-        .value.toLowerCase().trim();
+    const list = document.getElementById("productList");
+    const search = document.getElementById("search").value.toLowerCase().trim();
 
-    grid.innerHTML = "";
+    list.innerHTML = "";
 
     const filtered = products.filter(product => {
 
         const categoryMatch =
             currentFilter === "all" ||
-            product.category === currentFilter;
+            product.category === currentFilter ||
+            product.type === currentFilter;
 
-        const searchMatch =
+        return categoryMatch &&
             product.name.toLowerCase().includes(search);
-
-        return categoryMatch && searchMatch;
     });
 
-    document.getElementById("empty").style.display =
-        filtered.length === 0 ? "block" : "none";
+    document.getElementById("count").textContent =
+        filtered.length + " shoes found";
+
+    if (filtered.length === 0) {
+        list.innerHTML = '<div class="empty" style="display:block">No shoes found. Try another search.</div>';
+        return;
+    }
 
     filtered.forEach(product => {
 
         const card = document.createElement("div");
-        card.className = "product-card";
+        card.className = "card";
 
-        card.innerHTML = `
-            <img
+        const label = product.category === "premium"
+            ? "Premium"
+            : product.type === "sports"
+            ? "Sports"
+            : product.category === "women"
+            ? "Women's"
+            : "Men's";
+
+        const imageHTML = product.image
+            ? `<img class="product-image"
                 src="${product.image}"
                 alt="${product.name}"
-                onerror="this.style.display='none'"
-            >
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+               <div class="fallback" style="display:none">👟</div>`
+            : `<div class="fallback">👟</div>`;
 
-            <div class="product-info">
+        card.innerHTML = `
+            <div class="image-box">
+                ${imageHTML}
+            </div>
 
-                <span class="tag">${product.category}</span>
-
+            <div class="details">
+                <span class="tag">${label}</span>
                 <h3>${product.name}</h3>
-
-                <div class="price">
-                    ₹${product.price.toLocaleString("en-IN")}
-                </div>
-
-                <a href="${product.link}">
-                    VIEW COLLECTION
+                <div class="price">₹${product.price.toLocaleString("en-IN")}</div>
+                <a class="buy-btn"
+                   href="order.html?product=${encodeURIComponent(product.name)}">
+                   SHOP NOW
                 </a>
-
             </div>
         `;
 
-        grid.appendChild(card);
+        list.appendChild(card);
     });
 }
 
-function filterProducts(category,button) {
+function filterProducts(category, button) {
 
     currentFilter = category;
 
-    document.querySelectorAll(".filters button")
+    document.querySelectorAll(".category-buttons button")
         .forEach(btn => btn.classList.remove("active"));
 
     button.classList.add("active");
@@ -529,7 +543,7 @@ function filterProducts(category,button) {
 }
 
 document.getElementById("search")
-    .addEventListener("input",renderProducts);
+    .addEventListener("input", renderProducts);
 
 renderProducts();
 
@@ -537,3 +551,4 @@ renderProducts();
 
 </body>
 </html>
+```
