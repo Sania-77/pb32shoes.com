@@ -1,442 +1,179 @@
+<section class="categories" id="categories">
+  <h2>Our Products</h2>
+  <p>Explore Our Latest Collection</p>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>PB32 SHOES | Categories</title>
+  <div class="product-grid" id="productGrid"></div>
+</section>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+.categories {
+  padding: 50px 5%;
+  text-align: center;
+  background: #fff;
 }
 
-body {
-    background: #f5f5f5;
-    color: #111;
+.categories h2 {
+  font-size: 32px;
+  color: #222;
 }
 
-header {
-    background: #080808;
-    color: white;
-    padding: 22px 7%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 27px;
-    font-weight: 900;
-}
-
-.logo span {
-    color: #e5a900;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 22px;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: #e5a900;
-}
-
-.heading {
-    text-align: center;
-    padding: 45px 15px 25px;
-}
-
-.heading h1 {
-    font-size: 36px;
-}
-
-.heading span {
-    color: #d69b00;
-}
-
-.heading p {
-    color: #777;
-    margin-top: 12px;
-}
-
-.search {
-    display: block;
-    width: 85%;
-    max-width: 450px;
-    margin: 20px auto;
-    padding: 14px;
-    border: 1px solid #ccc;
-    border-radius: 7px;
-    font-size: 15px;
-}
-
-.buttons {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin: 25px 10px 35px;
-}
-
-.buttons button {
-    background: #111;
-    color: white;
-    border: none;
-    padding: 13px 25px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.buttons button.active,
-.buttons button:hover {
-    background: #e5a900;
-    color: black;
+.categories p {
+  color: #777;
+  margin-bottom: 30px;
 }
 
 .product-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 22px;
-    padding: 10px 7% 60px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
 }
 
-.card {
-    background: white;
-    border-radius: 10px;
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0 3px 12px #0001;
-    transition: .3s;
+.product-card {
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 12px;
+  background: white;
+  text-align: left;
 }
 
-.card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 20px #0002;
+.product-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 9px;
 }
 
-.product-image {
-    width: 100%;
-    height: 210px;
-    object-fit: contain;
-    background: #fafafa;
-    border-radius: 7px;
-}
-
-.card h3 {
-    font-size: 15px;
-    margin: 15px 0 10px;
+.product-card h3 {
+  font-size: 17px;
+  margin: 12px 0 6px;
 }
 
 .price {
-    color: #b47f00;
-    font-size: 19px;
-    font-weight: bold;
-    margin-bottom: 15px;
+  color: #e65100;
+  font-weight: bold;
+  font-size: 19px;
 }
 
-.card a {
-    display: block;
-    background: #111;
-    color: white;
-    text-decoration: none;
-    padding: 12px;
-    border-radius: 5px;
-    font-weight: bold;
+.product-card a {
+  display: block;
+  text-align: center;
+  background: #222;
+  color: white;
+  padding: 10px;
+  margin-top: 12px;
+  border-radius: 7px;
+  text-decoration: none;
 }
 
-.card a:hover {
-    background: #e5a900;
-    color: black;
+@media(max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.empty {
-    text-align: center;
-    padding: 30px;
-    display: none;
-}
-
-footer {
-    background: #080808;
-    color: white;
-    text-align: center;
-    padding: 30px;
-}
-
-footer span {
-    color: #e5a900;
-}
-
-@media(max-width: 850px) {
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media(max-width: 550px) {
-    header {
-        flex-direction: column;
-        gap: 18px;
-    }
-
-    nav a {
-        margin: 0 6px;
-        font-size: 12px;
-    }
-
-    .product-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .heading h1 {
-        font-size: 27px;
-    }
+@media(max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
-</head>
-
-<body>
-
-<header>
-    <div class="logo">PB32 <span>SHOES.</span></div>
-
-    <nav>
-        <a href="index.html">HOME</a>
-        <a href="categories.html">CATEGORIES</a>
-        <a href="contact.html">CONTACT</a>
-    </nav>
-</header>
-
-<div class="heading">
-    <h1>SHOP BY <span>CATEGORY</span></h1>
-    <p>Find Your Perfect Style With PB32 Shoes</p>
-</div>
-
-<input
-    type="text"
-    class="search"
-    id="search"
-    placeholder="Search your favourite shoes..."
->
-
-<div class="buttons">
-    <button class="active" onclick="showCategory('all',this)">ALL SHOES</button>
-    <button onclick="showCategory('men',this)">MEN</button>
-    <button onclick="showCategory('women',this)">WOMEN</button>
-</div>
-
-<div class="product-grid" id="productGrid"></div>
-
-<div class="empty" id="empty">
-    No products found.
-</div>
-
-<footer>
-    <h2>PB32 <span>SHOES.</span></h2>
-    <p>Step Into Style. Walk With Confidence.</p>
-    <p>© 2026 PB32 SHOES</p>
-</footer>
 
 <script>
-
 const products = [
-
-{
-name: "TRASKO White Men's Running Shoes",
-category: "men",
-price: 1459,
-link: "https://www.campusshoes.com/products/trasko-turtle-dove-navy-mens-running-shoes",
-image: ""
-},
-
-{
-name: "ROLIM White Men's Sneakers",
-category: "men",
-price: 1459,
-link: "https://www.campusshoes.com/products/rolim-wht-grn-mens-sneakers",
-image: ""
-},
-
-{
-name: "ESTILO Men's Sneakers",
-category: "men",
-price: 1389,
-link: "https://www.campusshoes.com/products/estilo-antq-wht-sea-blu-mens-sneakers",
-image: ""
-},
-
-{
-name: "ENCORE Black Men's Sneakers",
-category: "men",
-price: 1689,
-link: "https://www.campusshoes.com/products/encore-blk-d-gry-mens-sneakers",
-image: ""
-},
-
-{
-name: "ENCORE White Men's Sneakers",
-category: "men",
-price: 1599,
-link: "https://www.campusshoes.com/products/encore-wht-vallt-blue-mens-sneakers",
-image: ""
-},
-
-{
-name: "TRASKO Black Men's Running Shoes",
-category: "men",
-price: 1459,
-link: "https://www.campusshoes.com/products/trasko-black-d-gry-mens-running-shoes",
-image: ""
-},
-
-{
-name: "KRIVO Men's Running Shoes",
-category: "men",
-price: 1159,
-link: "https://www.campusshoes.com/products/krivo-wht-r-slate-mens-running-shoes",
-image: ""
-},
-
-{
-name: "FYBER Men's Running Shoes",
-category: "men",
-price: 1449,
-link: "https://www.campusshoes.com/products/fyber-l-grey-d-grey-mens-running-shoes",
-image: ""
-},
-
-{
-name: "AMBIT Women's Sneakers",
-category: "women",
-price: 0,
-link: "https://www.campusshoes.com/products/ambit-wht-blk-womens-sneakers",
-image: ""
-},
-
-{
-name: "CYMBAL Women's Running Shoes",
-category: "women",
-price: 0,
-link: "https://www.campusshoes.com/products/cymbal-h-pink-wan-blue-womens-running-shoes",
-image: ""
-},
-
-{
-name: "VIBRO Women's Sneakers",
-category: "women",
-price: 0,
-link: "https://www.campusshoes.com/products/vibro-blk-womens-sneakers",
-image: ""
-},
-
-{
-name: "New Balance 204V",
-category: "men",
-price: 0,
-link: "https://www.superkicks.in/products/new-balance-204v-pistachio-butter-with-morel-and-black-cement",
-image: ""
-},
-
-{
-name: "Air Jordan 1 Mid",
-category: "men",
-price: 0,
-link: "https://www.superkicks.in/products/jordan-air-jordan-1-mid-black-phantom-palomino-university-red?variant=48999393919227",
-image: ""
-},
-
-{
-name: "Nike Dunk Low Retro",
-category: "men",
-price: 0,
-link: "https://www.superkicks.in/products/nike-dunk-low-retro-white-black-white",
-image: ""
-}
-
+  {
+    name: "Product 1",
+    price: "",
+    image: "images/product1.jpg",
+    link: "https://www.instagram.com/p/DfrTULguFNb/"
+  },
+  {
+    name: "Product 2",
+    price: "",
+    image: "images/product2.jpg",
+    link: "https://www.instagram.com/p/Dfq4WKEPl5N/"
+  },
+  {
+    name: "Product 3",
+    price: "",
+    image: "images/product3.jpg",
+    link: "https://www.instagram.com/p/Dfq4YnNBoFZ/"
+  },
+  {
+    name: "Product 4",
+    price: "",
+    image: "images/product4.jpg",
+    link: "https://www.instagram.com/p/DfqwUzemLJ9/"
+  },
+  {
+    name: "Product 5",
+    price: "",
+    image: "images/product5.jpg",
+    link: "https://www.instagram.com/p/DfocuNwjBZ2/"
+  },
+  {
+    name: "Product 6",
+    price: "",
+    image: "images/product6.jpg",
+    link: "https://www.instagram.com/p/DfkH1JaNm1b/"
+  },
+  {
+    name: "Product 7",
+    price: "",
+    image: "images/product7.jpg",
+    link: "https://www.instagram.com/p/DfeXcTYvSyq/"
+  },
+  {
+    name: "Product 8",
+    price: "",
+    image: "images/product8.jpg",
+    link: "https://www.instagram.com/p/DfeO-roGM0K/"
+  },
+  {
+    name: "Product 9",
+    price: "",
+    image: "images/product9.jpg",
+    link: "https://www.instagram.com/p/DfUJPzrx-iK/"
+  },
+  {
+    name: "Product 10",
+    price: "",
+    image: "images/product10.jpg",
+    link: "https://www.instagram.com/p/DfT1FXhx-bF/"
+  },
+  {
+    name: "Product 11",
+    price: "",
+    image: "images/product11.jpg",
+    link: "https://www.instagram.com/p/DfRz--YJcsL/"
+  },
+  {
+    name: "Product 12",
+    price: "",
+    image: "images/product12.jpg",
+    link: "https://www.instagram.com/p/DfRP0r9mL2-/"
+  },
+  {
+    name: "Product 13",
+    price: "",
+    image: "images/product13.jpg",
+    link: "https://www.instagram.com/p/DfOtrICGMrE/"
+  }
 ];
 
-let currentCategory = "all";
+const grid = document.getElementById("productGrid");
 
-function displayProducts() {
-
-    const grid = document.getElementById("productGrid");
-    const search = document.getElementById("search").value.toLowerCase();
-
-    grid.innerHTML = "";
-
-    const filtered = products.filter(product => {
-
-        const matchCategory =
-            currentCategory === "all" ||
-            product.category === currentCategory;
-
-        const matchSearch =
-            product.name.toLowerCase().includes(search);
-
-        return matchCategory && matchSearch;
-    });
-
-    document.getElementById("empty").style.display =
-        filtered.length ? "none" : "block";
-
-    filtered.forEach(product => {
-
-        const card = document.createElement("div");
-        card.className = "card";
-
-        const image = product.image
-            ? `<img class="product-image"
-                src="${product.image}"
-                alt="${product.name}"
-                onerror="this.style.display='none'">`
-            : `<div class="product-image"
-                style="display:flex;align-items:center;justify-content:center;font-size:65px">👟</div>`;
-
-        const price = product.price > 0
-            ? "₹" + product.price.toLocaleString("en-IN")
-            : "Check Latest Price";
-
-        card.innerHTML = `
-            ${image}
-            <h3>${product.name}</h3>
-            <div class="price">${price}</div>
-            <a href="${product.link}"
-               target="_blank"
-               rel="noopener noreferrer">
-               VIEW PRODUCT
-            </a>
-        `;
-
-        grid.appendChild(card);
-    });
-}
-
-function showCategory(category, button) {
-
-    currentCategory = category;
-
-    document.querySelectorAll(".buttons button")
-        .forEach(btn => btn.classList.remove("active"));
-
-    button.classList.add("active");
-
-    displayProducts();
-}
-
-document.getElementById("search")
-    .addEventListener("input", displayProducts);
-
-displayProducts();
-
+products.forEach((product) => {
+  grid.innerHTML += `
+    <div class="product-card">
+      <img src="${product.image}" alt="${product.name}">
+      <h3>${product.name}</h3>
+      <div class="price">
+        ${product.price ? "₹" + product.price : "Price to be updated"}
+      </div>
+      <a href="${product.link}" target="_blank">
+        View Product
+      </a>
+    </div>
+  `;
+});
 </script>
-
-</body>
-</html>
