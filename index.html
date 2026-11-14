@@ -468,68 +468,152 @@ footer p {
 </section>
 
 
-<footer class="main-footer">
+<footer class="footer">
+  <div class="footer-container">
 
-    <div class="footer-container">
-
-        <!-- Brand Section -->
-        <div class="footer-box brand-box">
-            <h2>PB32 <span>SHOES.</span></h2>
-
-            <p>
-                Step Into Style. Walk With Confidence.
-                Discover stylish, trendy and comfortable
-                footwear for every step of your journey.
-            </p>
-
-            <div class="social-links">
-                <a href="#" aria-label="Instagram">Instagram</a>
-                <a href="#" aria-label="Facebook">Facebook</a>
-                <a href="#" aria-label="YouTube">YouTube</a>
-            </div>
-        </div>
-
-        <!-- Quick Links -->
-        <div class="footer-box">
-            <h3>QUICK LINKS</h3>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#categories">Categories</a></li>
-                <li><a href="index.html#products">Collection</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </div>
-
-        <!-- Categories -->
-        <div class="footer-box">
-            <h3>OUR CATEGORIES</h3>
-            <ul>
-                <li><a href="category.html">Sports Shoes</a></li>
-                <li><a href="category.html">Sneakers</a></li>
-                <li><a href="category.html">Casual Shoes</a></li>
-                <li><a href="category.html">Running Shoes</a></li>
-                <li><a href="category.html">Fashion Shoes</a></li>
-            </ul>
-        </div>
-
-        <!-- Contact -->
-        <div class="footer-box">
-            <h3>GET IN TOUCH</h3>
-            <p>Have questions? We'd love to hear from you.</p>
-            <a href="contact.html" class="footer-btn">
-                CONTACT US →
-            </a>
-        </div>
-
+    <div class="footer-box">
+      <h2 class="logo">Your<span>Website.</span></h2>
+      <p>
+        Welcome to our website. We provide
+        quality services and the best experience
+        for our visitors.
+      </p>
+      <div class="social">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">YouTube</a>
+      </div>
     </div>
 
-    <div class="footer-bottom">
-        <p>© 2026 PB32 SHOES. All Rights Reserved.</p>
-        <p>Designed with <span>♥</span> for Shoe Lovers</p>
+    <div class="footer-box">
+      <h3>Quick Links</h3>
+      <a href="#">Home</a>
+      <a href="#">About Us</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
     </div>
 
+    <div class="footer-box">
+      <h3>Our Services</h3>
+      <a href="#">Web Design</a>
+      <a href="#">Development</a>
+      <a href="#">Digital Marketing</a>
+      <a href="#">Support</a>
+    </div>
+
+    <div class="footer-box">
+      <h3>Contact Us</h3>
+      <p>📍 Your City, India</p>
+      <p>📧 example@gmail.com</p>
+      <p>📞 +91 00000 00000</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 YourWebsite. All Rights Reserved.</p>
+    <p>Designed with ❤️</p>
+  </div>
 </footer>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.footer {
+  background: linear-gradient(135deg, #090e20, #151c35);
+  color: white;
+  padding: 55px 8% 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 35px;
+}
+
+.logo {
+  font-size: 27px;
+  margin-bottom: 18px;
+  color: white;
+}
+
+.logo span {
+  color: #00d4ff;
+}
+
+.footer-box h3 {
+  color: #00d4ff;
+  margin-bottom: 20px;
+  font-size: 19px;
+}
+
+.footer-box p {
+  color: #b8c1d9;
+  line-height: 1.8;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.footer-box a {
+  display: block;
+  color: #b8c1d9;
+  text-decoration: none;
+  margin-bottom: 13px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.footer-box a:hover {
+  color: #00d4ff;
+  padding-left: 7px;
+}
+
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.social a {
+  background: #222d4c;
+  padding: 9px 12px;
+  border-radius: 7px;
+  margin: 0;
+}
+
+.footer-bottom {
+  border-top: 1px solid #35405b;
+  margin-top: 40px;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.footer-bottom p {
+  color: #9ba8c5;
+  font-size: 13px;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 
 
 </body>
