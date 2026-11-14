@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,10 +24,12 @@ body {
 header {
     background: #080808;
     color: white;
-    padding: 22px 7%;
+    padding: 20px 7%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .logo {
@@ -34,14 +37,19 @@ header {
     font-weight: 900;
 }
 
-.logo span {
+.logo span, footer span {
     color: #e5a900;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin-left: 20px;
     font-size: 13px;
     font-weight: bold;
 }
@@ -73,7 +81,7 @@ nav a:hover {
 
 .filters {
     text-align: center;
-    padding: 35px 15px;
+    padding: 35px 15px 15px;
 }
 
 .search {
@@ -83,12 +91,13 @@ nav a:hover {
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-bottom: 22px;
+    font-size: 15px;
 }
 
 .buttons {
     display: flex;
     justify-content: center;
-    gap: 12px;
+    gap: 10px;
     flex-wrap: wrap;
 }
 
@@ -106,6 +115,13 @@ nav a:hover {
 .buttons button.active {
     background: #e5a900;
     color: black;
+}
+
+.result-count {
+    text-align: center;
+    color: #666;
+    margin: 15px 0;
+    font-size: 14px;
 }
 
 .products {
@@ -129,26 +145,32 @@ nav a:hover {
     box-shadow: 0 8px 20px #0002;
 }
 
-.product-image {
-    height: 210px;
-    width: 100%;
-    object-fit: contain;
-    background: #fafafa;
-    border-radius: 6px;
-}
-
 .placeholder {
-    height: 210px;
+    height: 190px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 65px;
-    background: #fafafa;
+    font-size: 75px;
+    background: linear-gradient(135deg, #f4f4f4, #e8e8e8);
+    border-radius: 6px;
+}
+
+.category-label {
+    display: inline-block;
+    margin-top: 13px;
+    padding: 5px 12px;
+    background: #fff3cc;
+    color: #8b6500;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .card h3 {
     font-size: 15px;
-    margin: 15px 0;
+    margin: 12px 0;
+    min-height: 36px;
 }
 
 .price {
@@ -177,21 +199,20 @@ nav a:hover {
 .empty {
     display: none;
     text-align: center;
-    padding: 30px;
+    padding: 35px;
+    color: #777;
+    font-size: 18px;
 }
 
 footer {
     background: #080808;
     color: white;
     text-align: center;
-    padding: 35px;
+    padding: 35px 15px;
+    line-height: 2;
 }
 
-footer span {
-    color: #e5a900;
-}
-
-@media(max-width: 850px) {
+@media(max-width: 900px) {
     .products {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -200,15 +221,22 @@ footer span {
 @media(max-width: 550px) {
     header {
         flex-direction: column;
-        gap: 18px;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px;
     }
 
     nav a {
-        margin: 0 7px;
+        font-size: 11px;
     }
 
     .products {
         grid-template-columns: 1fr;
+        padding-left: 8%;
+        padding-right: 8%;
     }
 
     .hero h1 {
@@ -227,6 +255,8 @@ footer span {
         <a href="index.html">HOME</a>
         <a href="categories.html">CATEGORIES</a>
         <a href="collection.html">COLLECTION</a>
+        <a href="about.html">ABOUT</a>
+        <a href="support.html">SUPPORT</a>
         <a href="contact.html">CONTACT</a>
     </nav>
 </header>
@@ -246,30 +276,21 @@ footer span {
     >
 
     <div class="buttons">
-        <button class="active"
-        onclick="filterProducts('all',this)">
-        ALL
-        </button>
-
-        <button onclick="filterProducts('men',this)">
-        MEN
-        </button>
-
-        <button onclick="filterProducts('women',this)">
-        WOMEN
-        </button>
-
-        <button onclick="filterProducts('premium',this)">
-        PREMIUM
-        </button>
+        <button class="active" onclick="filterProducts('all',this)">ALL</button>
+        <button onclick="filterProducts('men',this)">MEN</button>
+        <button onclick="filterProducts('women',this)">WOMEN</button>
+        <button onclick="filterProducts('premium',this)">PREMIUM</button>
+        <button onclick="filterProducts('sports',this)">SPORTS</button>
     </div>
 
 </section>
 
+<div class="result-count" id="resultCount"></div>
+
 <div class="products" id="productList"></div>
 
 <div class="empty" id="empty">
-    No products found.
+    No products found. Try another search.
 </div>
 
 <footer>
@@ -285,6 +306,7 @@ const products = [
 {
 name: "TRASKO Men's Running Shoes",
 category: "men",
+type: "sports",
 price: 1459,
 link: "https://www.campusshoes.com/products/trasko-turtle-dove-navy-mens-running-shoes"
 },
@@ -292,6 +314,7 @@ link: "https://www.campusshoes.com/products/trasko-turtle-dove-navy-mens-running
 {
 name: "ROLIM Men's Sneakers",
 category: "men",
+type: "casual",
 price: 1459,
 link: "https://www.campusshoes.com/products/rolim-wht-grn-mens-sneakers"
 },
@@ -299,6 +322,7 @@ link: "https://www.campusshoes.com/products/rolim-wht-grn-mens-sneakers"
 {
 name: "ESTILO Men's Sneakers",
 category: "men",
+type: "casual",
 price: 1389,
 link: "https://www.campusshoes.com/products/estilo-antq-wht-sea-blu-mens-sneakers"
 },
@@ -306,6 +330,7 @@ link: "https://www.campusshoes.com/products/estilo-antq-wht-sea-blu-mens-sneaker
 {
 name: "ENCORE Black Men's Sneakers",
 category: "men",
+type: "casual",
 price: 1589,
 link: "https://www.campusshoes.com/products/encore-blk-d-gry-mens-sneakers"
 },
@@ -313,6 +338,7 @@ link: "https://www.campusshoes.com/products/encore-blk-d-gry-mens-sneakers"
 {
 name: "ENCORE White Men's Sneakers",
 category: "men",
+type: "casual",
 price: 1589,
 link: "https://www.campusshoes.com/products/encore-wht-vallt-blue-mens-sneakers"
 },
@@ -320,6 +346,7 @@ link: "https://www.campusshoes.com/products/encore-wht-vallt-blue-mens-sneakers"
 {
 name: "TRASKO Black Men's Running Shoes",
 category: "men",
+type: "sports",
 price: 1459,
 link: "https://www.campusshoes.com/products/trasko-black-d-gry-mens-running-shoes"
 },
@@ -327,6 +354,7 @@ link: "https://www.campusshoes.com/products/trasko-black-d-gry-mens-running-shoe
 {
 name: "KRIVO Men's Running Shoes",
 category: "men",
+type: "sports",
 price: 1159,
 link: "https://www.campusshoes.com/products/krivo-wht-r-slate-mens-running-shoes"
 },
@@ -334,6 +362,7 @@ link: "https://www.campusshoes.com/products/krivo-wht-r-slate-mens-running-shoes
 {
 name: "FYBER Men's Running Shoes",
 category: "men",
+type: "sports",
 price: 1149,
 link: "https://www.campusshoes.com/products/fyber-l-grey-d-grey-mens-running-shoes"
 },
@@ -341,6 +370,7 @@ link: "https://www.campusshoes.com/products/fyber-l-grey-d-grey-mens-running-sho
 {
 name: "AMBIT Women's Sneakers",
 category: "women",
+type: "casual",
 price: 1259,
 link: "https://www.campusshoes.com/products/ambit-wht-blk-womens-sneakers"
 },
@@ -348,6 +378,7 @@ link: "https://www.campusshoes.com/products/ambit-wht-blk-womens-sneakers"
 {
 name: "CYMBAL Women's Running Shoes",
 category: "women",
+type: "sports",
 price: 1549,
 link: "https://www.campusshoes.com/products/cymbal-h-pink-wan-blue-womens-running-shoes"
 },
@@ -355,6 +386,7 @@ link: "https://www.campusshoes.com/products/cymbal-h-pink-wan-blue-womens-runnin
 {
 name: "VIBRO Women's Sneakers",
 category: "women",
+type: "casual",
 price: 1199,
 link: "https://www.campusshoes.com/products/vibro-blk-womens-sneakers"
 },
@@ -362,6 +394,7 @@ link: "https://www.campusshoes.com/products/vibro-blk-womens-sneakers"
 {
 name: "New Balance 204V",
 category: "premium",
+type: "premium",
 price: 12999,
 link: "https://www.superkicks.in/products/new-balance-204v-pistachio-butter-with-morel-and-black-cement"
 },
@@ -369,6 +402,7 @@ link: "https://www.superkicks.in/products/new-balance-204v-pistachio-butter-with
 {
 name: "Air Jordan 1 Mid",
 category: "premium",
+type: "premium",
 price: 11495,
 link: "https://www.superkicks.in/products/jordan-air-jordan-1-mid-black-phantom-palomino-university-red?variant=48999393919227"
 },
@@ -376,6 +410,7 @@ link: "https://www.superkicks.in/products/jordan-air-jordan-1-mid-black-phantom-
 {
 name: "Nike Dunk Low Retro",
 category: "premium",
+type: "premium",
 price: 8295,
 link: "https://www.superkicks.in/products/nike-dunk-low-retro-white-black-white"
 }
@@ -387,8 +422,7 @@ let currentFilter = "all";
 function renderProducts() {
 
     const list = document.getElementById("productList");
-    const search = document.getElementById("search")
-        .value.toLowerCase();
+    const search = document.getElementById("search").value.toLowerCase().trim();
 
     list.innerHTML = "";
 
@@ -396,7 +430,8 @@ function renderProducts() {
 
         const categoryMatch =
             currentFilter === "all" ||
-            product.category === currentFilter;
+            product.category === currentFilter ||
+            product.type === currentFilter;
 
         const searchMatch =
             product.name.toLowerCase().includes(search);
@@ -405,15 +440,25 @@ function renderProducts() {
     });
 
     document.getElementById("empty").style.display =
-        filtered.length ? "none" : "block";
+        filtered.length === 0 ? "block" : "none";
+
+    document.getElementById("resultCount").textContent =
+        filtered.length + " products found";
 
     filtered.forEach(product => {
 
         const card = document.createElement("div");
         card.className = "card";
 
+        const label = product.category === "premium"
+            ? "Premium"
+            : product.type === "sports"
+            ? "Sports Shoes"
+            : product.category;
+
         card.innerHTML = `
             <div class="placeholder">👟</div>
+            <div class="category-label">${label}</div>
             <h3>${product.name}</h3>
             <div class="price">
                 ₹${product.price.toLocaleString("en-IN")}
@@ -429,7 +474,7 @@ function renderProducts() {
     });
 }
 
-function filterProducts(category,button) {
+function filterProducts(category, button) {
 
     currentFilter = category;
 
@@ -442,7 +487,7 @@ function filterProducts(category,button) {
 }
 
 document.getElementById("search")
-    .addEventListener("input",renderProducts);
+    .addEventListener("input", renderProducts);
 
 renderProducts();
 
