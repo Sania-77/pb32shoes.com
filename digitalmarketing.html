@@ -1,0 +1,686 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Digital Marketing | PB32 SHOES</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Montserrat',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f8f8f8;
+    color:#111;
+}
+
+/* HEADER */
+
+header{
+    background:#080808;
+    color:white;
+    padding:20px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.logo{
+    font-size:27px;
+    font-weight:900;
+}
+
+.logo span{
+    color:#e5a900;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:12px;
+    font-weight:700;
+}
+
+nav a:hover{
+    color:#e5a900;
+}
+
+/* HERO SECTION */
+
+.hero{
+    min-height:450px;
+    background:linear-gradient(#000c,#0009),
+    url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1500') center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:50px 20px;
+}
+
+.hero h1{
+    font-size:55px;
+    font-weight:900;
+}
+
+.hero h1 span{
+    color:#e5a900;
+}
+
+.hero p{
+    max-width:700px;
+    margin:20px auto 30px;
+    color:#ddd;
+    font-size:14px;
+    line-height:1.9;
+}
+
+.btn{
+    display:inline-block;
+    background:#e5a900;
+    color:#111;
+    padding:15px 28px;
+    text-decoration:none;
+    font-weight:800;
+    border-radius:4px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:white;
+    transform:translateY(-4px);
+}
+
+/* INTRODUCTION */
+
+.intro{
+    padding:80px 8%;
+    text-align:center;
+}
+
+.section-title{
+    font-size:35px;
+    font-weight:900;
+    margin-bottom:18px;
+}
+
+.section-title span{
+    color:#d49b00;
+}
+
+.intro p{
+    max-width:850px;
+    margin:auto;
+    color:#666;
+    line-height:1.9;
+    font-size:14px;
+}
+
+/* SERVICES */
+
+.services{
+    background:white;
+    padding:80px 8%;
+    text-align:center;
+}
+
+.subtitle{
+    color:#777;
+    font-size:14px;
+    margin-bottom:40px;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.service-card{
+    background:#f8f8f8;
+    padding:35px 25px;
+    border-radius:10px;
+    border-bottom:3px solid #e5a900;
+    transition:.3s;
+}
+
+.service-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 10px 25px #00000012;
+}
+
+.service-icon{
+    font-size:45px;
+    margin-bottom:18px;
+}
+
+.service-card h3{
+    font-size:18px;
+    margin-bottom:12px;
+}
+
+.service-card p{
+    color:#777;
+    font-size:13px;
+    line-height:1.8;
+}
+
+/* MARKETING STRATEGY */
+
+.strategy{
+    background:#111;
+    color:white;
+    padding:80px 8%;
+    text-align:center;
+}
+
+.strategy-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-top:40px;
+}
+
+.strategy-card{
+    border:1px solid #444;
+    padding:30px 18px;
+    border-radius:8px;
+}
+
+.strategy-card h3{
+    color:#e5a900;
+    margin-bottom:15px;
+}
+
+.strategy-card p{
+    color:#ccc;
+    font-size:12px;
+    line-height:1.8;
+}
+
+/* SOCIAL MEDIA */
+
+.social{
+    padding:80px 8%;
+    text-align:center;
+}
+
+.social-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    margin-top:40px;
+}
+
+.social-card{
+    background:white;
+    padding:35px 20px;
+    border-radius:10px;
+    box-shadow:0 5px 20px #00000010;
+}
+
+.social-card .icon{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.social-card h3{
+    margin-bottom:12px;
+}
+
+.social-card p{
+    color:#777;
+    font-size:13px;
+    line-height:1.8;
+}
+
+/* WHY DIGITAL MARKETING */
+
+.benefits{
+    background:#111;
+    color:white;
+    padding:75px 8%;
+    text-align:center;
+}
+
+.benefit-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    margin-top:40px;
+}
+
+.benefit{
+    padding:25px;
+    border:1px solid #444;
+    border-radius:8px;
+}
+
+.benefit h3{
+    color:#e5a900;
+    margin-bottom:12px;
+}
+
+.benefit p{
+    color:#ccc;
+    font-size:13px;
+    line-height:1.8;
+}
+
+/* CALL TO ACTION */
+
+.cta{
+    background:#e5a900;
+    text-align:center;
+    padding:70px 20px;
+}
+
+.cta h2{
+    font-size:35px;
+    font-weight:900;
+}
+
+.cta p{
+    margin:18px 0 25px;
+}
+
+.cta a{
+    display:inline-block;
+    background:#111;
+    color:white;
+    padding:14px 28px;
+    text-decoration:none;
+    font-weight:700;
+    border-radius:4px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#080808;
+    color:white;
+    text-align:center;
+    padding:35px 15px;
+}
+
+footer h2{
+    font-size:28px;
+}
+
+footer h2 span{
+    color:#e5a900;
+}
+
+footer p{
+    color:#aaa;
+    font-size:13px;
+    margin-top:12px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:800px){
+
+    header{
+        flex-direction:column;
+        gap:18px;
+    }
+
+    nav{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:12px;
+    }
+
+    nav a{
+        margin:0;
+    }
+
+    .service-grid,
+    .social-grid,
+    .benefit-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .strategy-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+}
+
+@media(max-width:500px){
+
+    .service-grid,
+    .social-grid,
+    .benefit-grid,
+    .strategy-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .section-title{
+        font-size:27px;
+    }
+
+    .cta h2{
+        font-size:27px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+        PB32 <span>SHOES.</span>
+    </div>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="development.html">DEVELOPMENT</a>
+        <a href="digitalmarketing.html">DIGITAL MARKETING</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div>
+        <h1>DIGITAL <span>MARKETING</span></h1>
+
+        <p>
+            Connecting PB32 SHOES with the digital world.
+            Building brand awareness, reaching new audiences
+            and creating a strong online presence.
+        </p>
+
+        <a href="#services" class="btn">
+            EXPLORE OUR STRATEGY →
+        </a>
+    </div>
+
+</section>
+
+<!-- INTRODUCTION -->
+
+<section class="intro">
+
+    <h2 class="section-title">
+        GROW YOUR BRAND <span>DIGITALLY</span>
+    </h2>
+
+    <p>
+        Digital marketing helps PB32 SHOES connect with
+        customers through online platforms. By using social
+        media, search engines and creative content, we aim
+        to showcase our footwear collections, improve brand
+        visibility and make it easier for customers to
+        discover our products.
+    </p>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+    <h2 class="section-title">
+        OUR MARKETING <span>SERVICES</span>
+    </h2>
+
+    <p class="subtitle">
+        Smart digital strategies for a stronger online presence.
+    </p>
+
+    <div class="service-grid">
+
+        <div class="service-card">
+            <div class="service-icon">🔍</div>
+            <h3>SEO Optimization</h3>
+            <p>
+                Improving website visibility in search engines
+                so customers can discover PB32 SHOES online.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">📱</div>
+            <h3>Social Media Marketing</h3>
+            <p>
+                Sharing product updates, shoe collections
+                and engaging content on social media.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">✍️</div>
+            <h3>Content Marketing</h3>
+            <p>
+                Creating attractive product descriptions,
+                promotional posts and useful content.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">📢</div>
+            <h3>Online Advertising</h3>
+            <p>
+                Using digital advertising platforms
+                to introduce our footwear to new audiences.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">📧</div>
+            <h3>Email Marketing</h3>
+            <p>
+                Sharing product news, offers and updates
+                with customers who subscribe to our emails.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">📊</div>
+            <h3>Performance Analysis</h3>
+            <p>
+                Understanding website visits and campaign
+                performance through digital analytics.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- STRATEGY -->
+
+<section class="strategy">
+
+    <h2 class="section-title">
+        OUR <span>MARKETING STRATEGY</span>
+    </h2>
+
+    <p class="subtitle">
+        A simple approach to building our digital brand.
+    </p>
+
+    <div class="strategy-grid">
+
+        <div class="strategy-card">
+            <h3>01. PLAN</h3>
+            <p>
+                Identify our audience and
+                set clear marketing goals.
+            </p>
+        </div>
+
+        <div class="strategy-card">
+            <h3>02. CREATE</h3>
+            <p>
+                Design attractive visuals,
+                posts and product content.
+            </p>
+        </div>
+
+        <div class="strategy-card">
+            <h3>03. PROMOTE</h3>
+            <p>
+                Share content through
+                suitable digital platforms.
+            </p>
+        </div>
+
+        <div class="strategy-card">
+            <h3>04. ANALYZE</h3>
+            <p>
+                Review campaign results
+                and improve our approach.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SOCIAL MEDIA -->
+
+<section class="social">
+
+    <h2 class="section-title">
+        CONNECT WITH <span>OUR AUDIENCE</span>
+    </h2>
+
+    <p class="subtitle">
+        Social media helps us share our style with the world.
+    </p>
+
+    <div class="social-grid">
+
+        <div class="social-card">
+            <div class="icon">📸</div>
+            <h3>Instagram</h3>
+            <p>
+                Showcase new arrivals, product photos
+                and fashion inspiration.
+            </p>
+        </div>
+
+        <div class="social-card">
+            <div class="icon">👥</div>
+            <h3>Facebook</h3>
+            <p>
+                Connect with customers and
+                share brand announcements.
+            </p>
+        </div>
+
+        <div class="social-card">
+            <div class="icon">▶️</div>
+            <h3>YouTube</h3>
+            <p>
+                Share product videos, footwear
+                highlights and brand stories.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- BENEFITS -->
+
+<section class="benefits">
+
+    <h2 class="section-title">
+        WHY DIGITAL <span>MARKETING?</span>
+    </h2>
+
+    <div class="benefit-grid">
+
+        <div class="benefit">
+            <h3>Brand Awareness</h3>
+            <p>
+                Help more people discover
+                the PB32 SHOES brand.
+            </p>
+        </div>
+
+        <div class="benefit">
+            <h3>Wider Reach</h3>
+            <p>
+                Connect with audiences
+                across different locations.
+            </p>
+        </div>
+
+        <div class="benefit">
+            <h3>Customer Engagement</h3>
+            <p>
+                Build communication and
+                relationships with customers.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="cta">
+
+    <h2>STEP INTO THE DIGITAL WORLD!</h2>
+
+    <p>
+        Discover our footwear collection and stay connected with PB32 SHOES.
+    </p>
+
+    <a href="index.html">
+        EXPLORE OUR WEBSITE →
+    </a>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h2>PB32 <span>SHOES.</span></h2>
+
+    <p>Step Into Style. Walk With Confidence.</p>
+
+    <p>© 2026 PB32 SHOES. All Rights Reserved.</p>
+
+</footer>
+
+</body>
+</html>
