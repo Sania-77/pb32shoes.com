@@ -1,0 +1,498 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Return & Exchange | PB32 SHOES</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: #080808;
+    color: white;
+}
+
+header {
+    background: #111;
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #d4af5a;
+}
+
+.logo {
+    color: #d4af5a;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #d4af5a;
+}
+
+.hero {
+    text-align: center;
+    padding: 85px 20px;
+    background: linear-gradient(135deg, #1b1b1b, #050505);
+}
+
+.hero h1 {
+    color: #d4af5a;
+    font-size: 42px;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    color: #ccc;
+    line-height: 1.8;
+}
+
+.container {
+    width: 85%;
+    max-width: 1100px;
+    margin: 60px auto;
+}
+
+.section-title {
+    text-align: center;
+    color: #d4af5a;
+    font-size: 28px;
+    margin-bottom: 35px;
+}
+
+.policy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+.policy-card {
+    background: #151515;
+    padding: 30px 22px;
+    border: 1px solid #333;
+    border-radius: 12px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.policy-card:hover {
+    border-color: #d4af5a;
+    transform: translateY(-5px);
+}
+
+.policy-card .icon {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.policy-card h3 {
+    color: #d4af5a;
+    margin-bottom: 12px;
+}
+
+.policy-card p {
+    color: #bbb;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.info-box {
+    background: #151515;
+    padding: 28px;
+    margin-bottom: 20px;
+    border-left: 4px solid #d4af5a;
+    border-radius: 8px;
+}
+
+.info-box h3 {
+    color: #d4af5a;
+    margin-bottom: 12px;
+}
+
+.info-box p {
+    color: #bbb;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.step {
+    background: #151515;
+    padding: 25px;
+    text-align: center;
+    border: 1px solid #333;
+    border-radius: 10px;
+}
+
+.step span {
+    color: #d4af5a;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.step h3 {
+    margin: 12px 0;
+    color: #d4af5a;
+}
+
+.step p {
+    color: #bbb;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.form-box {
+    background: #151515;
+    max-width: 650px;
+    margin: auto;
+    padding: 35px;
+    border: 1px solid #333;
+    border-radius: 12px;
+}
+
+.form-box h2 {
+    text-align: center;
+    color: #d4af5a;
+    margin-bottom: 25px;
+}
+
+.form-box label {
+    display: block;
+    margin: 15px 0 8px;
+    color: #ddd;
+    font-size: 13px;
+}
+
+.form-box input,
+.form-box select,
+.form-box textarea {
+    width: 100%;
+    padding: 13px;
+    background: #080808;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 5px;
+    outline: none;
+}
+
+.form-box textarea {
+    height: 110px;
+    resize: vertical;
+}
+
+.btn {
+    display: inline-block;
+    background: #d4af5a;
+    color: #111;
+    padding: 13px 25px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.form-box button {
+    width: 100%;
+    margin-top: 22px;
+}
+
+.btn:hover {
+    background: white;
+}
+
+.faq {
+    background: #151515;
+    padding: 22px;
+    margin-bottom: 15px;
+    border: 1px solid #333;
+    border-radius: 8px;
+}
+
+.faq h3 {
+    color: #d4af5a;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.faq p {
+    color: #bbb;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.contact {
+    text-align: center;
+    background: #171717;
+    padding: 55px 20px;
+    margin-top: 60px;
+}
+
+.contact h2 {
+    color: #d4af5a;
+    margin-bottom: 15px;
+}
+
+.contact p {
+    color: #ccc;
+    margin-bottom: 25px;
+    line-height: 1.8;
+}
+
+footer {
+    background: #050505;
+    text-align: center;
+    padding: 25px;
+    color: #999;
+    border-top: 1px solid #333;
+    font-size: 13px;
+}
+
+footer span {
+    color: #d4af5a;
+}
+
+@media(max-width: 700px) {
+    header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav {
+        text-align: center;
+        line-height: 2.5;
+    }
+
+    nav a {
+        margin: 0 7px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    .form-box {
+        padding: 22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">PB32 SHOES</div>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="support.html">SUPPORT</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>RETURN & EXCHANGE</h1>
+    <p>
+        Shop with confidence at PB32 SHOES.<br>
+        Need a different size or help with your product?
+        We are here to assist.
+    </p>
+</section>
+
+<section class="container">
+
+    <h2 class="section-title">Our Return & Exchange Services</h2>
+
+    <div class="policy-grid">
+
+        <div class="policy-card">
+            <div class="icon">👟</div>
+            <h3>Size Exchange</h3>
+            <p>Request a different shoe size, subject to availability and our exchange policy.</p>
+        </div>
+
+        <div class="policy-card">
+            <div class="icon">📦</div>
+            <h3>Product Return</h3>
+            <p>Contact our team to request a return according to the applicable return conditions.</p>
+        </div>
+
+        <div class="policy-card">
+            <div class="icon">💰</div>
+            <h3>Refund Support</h3>
+            <p>Get assistance with refund requests after an eligible return is approved.</p>
+        </div>
+
+        <div class="policy-card">
+            <div class="icon">🛠️</div>
+            <h3>Damaged Product</h3>
+            <p>Report a damaged or incorrect product with order details and product photos.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="container">
+
+    <h2 class="section-title">Return & Exchange Policy</h2>
+
+    <div class="info-box">
+        <h3>1. Product Condition</h3>
+        <p>Products should be unused and returned with original packaging, tags and accessories, as applicable under the final store policy.</p>
+    </div>
+
+    <div class="info-box">
+        <h3>2. Size Exchange</h3>
+        <p>Customers can contact support for a size exchange request. The requested size will depend on stock availability.</p>
+    </div>
+
+    <div class="info-box">
+        <h3>3. Damaged or Wrong Product</h3>
+        <p>If you receive a damaged or incorrect item, contact support with your order ID and clear photos for assistance.</p>
+    </div>
+
+    <div class="info-box">
+        <h3>4. Refund Process</h3>
+        <p>Approved refunds will be processed according to the final refund policy and the payment provider's processing time.</p>
+    </div>
+
+</section>
+
+<section class="container">
+
+    <h2 class="section-title">How Does It Work?</h2>
+
+    <div class="steps">
+
+        <div class="step">
+            <span>01</span>
+            <h3>Submit Request</h3>
+            <p>Share your order details and return or exchange reason.</p>
+        </div>
+
+        <div class="step">
+            <span>02</span>
+            <h3>Request Review</h3>
+            <p>Our support team checks your request and eligibility.</p>
+        </div>
+
+        <div class="step">
+            <span>03</span>
+            <h3>Product Pickup</h3>
+            <p>Follow the return or pickup instructions provided by our team.</p>
+        </div>
+
+        <div class="step">
+            <span>04</span>
+            <h3>Resolution</h3>
+            <p>Receive an approved exchange or refund as applicable.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="container">
+
+    <div class="form-box">
+        <h2>Return / Exchange Request</h2>
+
+        <form onsubmit="event.preventDefault(); alert('Demo form submitted! Connect this form to a backend to receive real requests.');">
+
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter your name" required>
+
+            <label>Email Address</label>
+            <input type="email" placeholder="Enter your email" required>
+
+            <label>Order ID</label>
+            <input type="text" placeholder="Enter your Order ID" required>
+
+            <label>Request Type</label>
+            <select required>
+                <option value="">Select Request Type</option>
+                <option>Size Exchange</option>
+                <option>Product Return</option>
+                <option>Damaged Product</option>
+                <option>Wrong Product Received</option>
+                <option>Refund Query</option>
+            </select>
+
+            <label>Reason for Request</label>
+            <textarea placeholder="Explain your issue..." required></textarea>
+
+            <button type="submit" class="btn">SUBMIT REQUEST</button>
+
+        </form>
+    </div>
+
+</section>
+
+<section class="container">
+
+    <h2 class="section-title">Frequently Asked Questions</h2>
+
+    <div class="faq">
+        <h3>Q1. Can I exchange my shoe size?</h3>
+        <p>Yes, you can request a size exchange, subject to the final exchange policy and stock availability.</p>
+    </div>
+
+    <div class="faq">
+        <h3>Q2. Can I return a used product?</h3>
+        <p>Return eligibility depends on the final store policy and product condition.</p>
+    </div>
+
+    <div class="faq">
+        <h3>Q3. How will I receive my refund?</h3>
+        <p>Approved refunds will be processed according to the original payment method and applicable policy.</p>
+    </div>
+
+    <div class="faq">
+        <h3>Q4. How can I check my request status?</h3>
+        <p>Contact our support team with your Order ID and request details.</p>
+    </div>
+
+</section>
+
+<section class="contact">
+    <h2>Need Help With Your Return?</h2>
+    <p>Contact our team for return, exchange and refund assistance.</p>
+    <a href="contact.html" class="btn">CONTACT SUPPORT</a>
+</section>
+
+<footer>
+    © 2026 <span>PB32 SHOES</span> | All Rights Reserved.
+</footer>
+
+</body>
+</html>
