@@ -1,171 +1,103 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shop Now | PB32 SHOES</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<title>Place Your Order | PB32 SHOES</title>
 
 <style>
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 body {
-    background: #f7f7f7;
-    color: #111;
+    background: #f4f4f4;
+    color: #222;
 }
 
 header {
     background: #111;
     color: white;
-    padding: 22px 7%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
+    text-align: center;
+    padding: 22px;
 }
 
-.logo {
-    font-size: 27px;
-    font-weight: 900;
+header h1 {
+    font-size: 28px;
     letter-spacing: 2px;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 22px;
-    font-size: 13px;
-    font-weight: 700;
-}
-
-.hero {
-    min-height: 380px;
-    background: linear-gradient(120deg, #111, #333, #777);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 50px 20px;
-}
-
-.hero h1 {
-    font-size: clamp(38px, 7vw, 65px);
-    font-weight: 900;
-    margin-bottom: 15px;
-}
-
-.hero p {
-    font-size: 16px;
-    margin-bottom: 28px;
-}
-
-.btn {
-    display: inline-block;
-    background: #d6ad60;
-    color: #111;
-    padding: 14px 32px;
-    text-decoration: none;
-    font-weight: 800;
-    border-radius: 4px;
-    transition: 0.3s;
-}
-
-.btn:hover {
+.container {
+    max-width: 650px;
+    margin: 35px auto;
     background: white;
-    transform: translateY(-3px);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px #00000015;
 }
 
-.section {
-    padding: 55px 7%;
+h2 {
     text-align: center;
+    margin-bottom: 10px;
 }
 
-.section h2 {
-    font-size: 30px;
-    font-weight: 900;
-    margin-bottom: 12px;
-}
-
-.section p {
+.subtitle {
+    text-align: center;
     color: #666;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
-.categories {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 22px;
+label {
+    display: block;
+    margin: 15px 0 7px;
+    font-weight: bold;
 }
 
-.category {
-    background: white;
-    padding: 35px 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px #00000010;
-    transition: 0.3s;
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
 }
 
-.category:hover {
-    transform: translateY(-6px);
+textarea {
+    resize: vertical;
+    min-height: 85px;
 }
 
-.category .shoe {
-    font-size: 65px;
-    margin-bottom: 15px;
-}
-
-.category h3 {
-    font-size: 19px;
-    margin-bottom: 12px;
-}
-
-.category a {
-    color: #9b702e;
-    font-weight: 800;
-    text-decoration: none;
-}
-
-.shop-all {
-    background: #eaeaea;
-    padding: 45px 20px;
-    text-align: center;
-}
-
-.shop-all h2 {
-    font-size: 28px;
-    margin-bottom: 15px;
-}
-
-footer {
+button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px;
     background: #111;
     color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #333;
+}
+
+.back {
+    display: block;
     text-align: center;
-    padding: 25px;
-    font-size: 13px;
+    margin-top: 20px;
+    color: #111;
 }
 
 @media(max-width: 600px) {
-    header {
-        justify-content: center;
-    }
-
-    nav {
-        text-align: center;
-    }
-
-    nav a {
-        display: inline-block;
-        margin: 8px;
+    .container {
+        margin: 20px 12px;
+        padding: 22px;
     }
 }
 </style>
@@ -174,65 +106,72 @@ footer {
 <body>
 
 <header>
-    <div class="logo">PB32 SHOES</div>
-
-    <nav>
-        <a href="index.html">HOME</a>
-        <a href="categories.html">CATEGORIES</a>
-        <a href="product.html">COLLECTION</a>
-        <a href="contact.html">CONTACT</a>
-    </nav>
+    <h1>PB32 SHOES</h1>
 </header>
 
-<section class="hero">
-    <h1>STEP INTO STYLE</h1>
-    <p>Discover Your Perfect Pair at PB32 SHOES</p>
-    <a href="product.html" class="btn">EXPLORE COLLECTION</a>
-</section>
+<div class="container">
 
-<section class="section">
-    <h2>SHOP BY CATEGORY</h2>
-    <p>Find the perfect shoes for every style and every step.</p>
+    <h2>PLACE YOUR ORDER</h2>
+    <p class="subtitle">Fill in your details to request your order.</p>
 
-    <div class="categories">
+    <form id="orderForm">
 
-        <div class="category">
-            <div class="shoe">👟</div>
-            <h3>Men's Shoes</h3>
-            <a href="product.html">SHOP NOW →</a>
-        </div>
+        <label>Full Name</label>
+        <input type="text" name="name" placeholder="Enter your name" required>
 
-        <div class="category">
-            <div class="shoe">👠</div>
-            <h3>Women's Shoes</h3>
-            <a href="product.html">SHOP NOW →</a>
-        </div>
+        <label>Mobile Number</label>
+        <input type="tel" name="phone" placeholder="Enter mobile number"
+        pattern="[0-9]{10}" maxlength="10" required>
 
-        <div class="category">
-            <div class="shoe">🏃</div>
-            <h3>Sports Shoes</h3>
-            <a href="product.html">SHOP NOW →</a>
-        </div>
+        <label>Email Address</label>
+        <input type="email" name="email" placeholder="Enter your email" required>
 
-        <div class="category">
-            <div class="shoe">✨</div>
-            <h3>Premium Collection</h3>
-            <a href="product.html">SHOP NOW →</a>
-        </div>
+        <label>Product Name</label>
+        <input type="text" name="product" id="productName"
+        placeholder="Enter shoe name" required>
 
-    </div>
-</section>
+        <label>Shoe Size</label>
+        <select name="size" required>
+            <option value="">Select Shoe Size</option>
+            <option>UK 6</option>
+            <option>UK 7</option>
+            <option>UK 8</option>
+            <option>UK 9</option>
+            <option>UK 10</option>
+            <option>UK 11</option>
+        </select>
 
-<section class="shop-all">
-    <h2>FIND YOUR PERFECT PAIR</h2>
-    <p>Explore the complete PB32 SHOES collection.</p>
-    <br>
-    <a href="product.html" class="btn">SHOP ALL PRODUCTS</a>
-</section>
+        <label>Quantity</label>
+        <input type="number" name="quantity" min="1" value="1" required>
 
-<footer>
-    © 2026 PB32 SHOES. All Rights Reserved.
-</footer>
+        <label>Delivery Address</label>
+        <textarea name="address" placeholder="House number, street, city, state, PIN code" required></textarea>
+
+        <label>Payment Preference</label>
+        <select name="payment" required>
+            <option value="">Select Payment Preference</option>
+            <option>Cash on Delivery (COD)</option>
+            <option>Online Payment</option>
+        </select>
+
+        <label>Additional Instructions</label>
+        <textarea name="instructions" placeholder="Any special instructions?"></textarea>
+
+        <button type="submit">PLACE ORDER</button>
+
+    </form>
+
+    <a class="back" href="product.html">← Back to Products</a>
+
+</div>
+
+<script>
+document.getElementById("orderForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    alert("Your order form is ready! Please connect an order service to submit it.");
+});
+</script>
 
 </body>
 </html>
+```
