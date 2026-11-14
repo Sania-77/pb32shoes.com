@@ -145,14 +145,29 @@ nav a:hover {
     box-shadow: 0 8px 20px #0002;
 }
 
-.placeholder {
+.image-box {
     height: 190px;
+    background: #f4f4f4;
+    border-radius: 6px;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.image-fallback {
+    display: none;
     font-size: 75px;
-    background: linear-gradient(135deg, #f4f4f4, #e8e8e8);
-    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    height: 190px;
 }
 
 .category-label {
@@ -461,7 +476,15 @@ function renderProducts() {
             : product.category;
 
         card.innerHTML = `
-            <div class="placeholder">👟</div>
+           <div class="image-box">
+    <img
+        class="product-image"
+        src="${product.image}"
+        alt="${product.name}"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+    >
+    <div class="image-fallback">👟</div>
+</div>
             <div class="category-label">${label}</div>
             <h3>${product.name}</h3>
             <div class="price">
