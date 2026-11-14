@@ -1,0 +1,397 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Order Support | PB32 SHOES</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: #080808;
+    color: white;
+}
+
+header {
+    background: #111;
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #d4af5a;
+}
+
+.logo {
+    color: #d4af5a;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #d4af5a;
+}
+
+.hero {
+    text-align: center;
+    padding: 85px 20px;
+    background: linear-gradient(135deg, #1b1b1b, #050505);
+}
+
+.hero h1 {
+    color: #d4af5a;
+    font-size: 42px;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    color: #ccc;
+    line-height: 1.8;
+}
+
+.container {
+    width: 85%;
+    max-width: 1100px;
+    margin: 60px auto;
+}
+
+.section-title {
+    text-align: center;
+    color: #d4af5a;
+    font-size: 28px;
+    margin-bottom: 35px;
+}
+
+.track-box {
+    max-width: 650px;
+    margin: auto;
+    padding: 35px;
+    background: #151515;
+    border: 1px solid #333;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.track-box h2 {
+    color: #d4af5a;
+    margin-bottom: 15px;
+}
+
+.track-box p {
+    color: #bbb;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.track-box input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: #080808;
+    border: 1px solid #555;
+    color: white;
+    border-radius: 5px;
+    outline: none;
+}
+
+.btn {
+    display: inline-block;
+    background: #d4af5a;
+    color: #111;
+    padding: 13px 25px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: white;
+}
+
+.support-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+.support-card {
+    background: #151515;
+    padding: 28px 22px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.support-card:hover {
+    border-color: #d4af5a;
+    transform: translateY(-5px);
+}
+
+.support-card .icon {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.support-card h3 {
+    color: #d4af5a;
+    margin-bottom: 12px;
+}
+
+.support-card p {
+    color: #bbb;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.info-box {
+    background: #151515;
+    padding: 25px;
+    margin-bottom: 18px;
+    border-left: 4px solid #d4af5a;
+    border-radius: 8px;
+}
+
+.info-box h3 {
+    color: #d4af5a;
+    margin-bottom: 10px;
+}
+
+.info-box p {
+    color: #bbb;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.faq {
+    background: #151515;
+    padding: 22px;
+    margin-bottom: 15px;
+    border: 1px solid #333;
+    border-radius: 8px;
+}
+
+.faq h3 {
+    color: #d4af5a;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.faq p {
+    color: #bbb;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.contact {
+    text-align: center;
+    background: #171717;
+    padding: 55px 20px;
+    margin-top: 60px;
+}
+
+.contact h2 {
+    color: #d4af5a;
+    margin-bottom: 15px;
+}
+
+.contact p {
+    color: #ccc;
+    margin-bottom: 25px;
+    line-height: 1.8;
+}
+
+footer {
+    background: #050505;
+    text-align: center;
+    padding: 25px;
+    color: #999;
+    border-top: 1px solid #333;
+    font-size: 13px;
+}
+
+footer span {
+    color: #d4af5a;
+}
+
+@media(max-width: 700px) {
+    header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav {
+        text-align: center;
+        line-height: 2.5;
+    }
+
+    nav a {
+        margin: 0 7px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .container {
+        width: 90%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">PB32 SHOES</div>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="support.html">SUPPORT</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>ORDER SUPPORT</h1>
+    <p>
+        Need help with your order?<br>
+        We are here to make your shopping experience easy.
+    </p>
+</section>
+
+<section class="container">
+
+    <h2 class="section-title">Track Your Order</h2>
+
+    <div class="track-box">
+        <h2>📦 Order Tracking</h2>
+
+        <p>
+            Enter your Order ID to check your order status.
+        </p>
+
+        <input type="text" placeholder="Enter Your Order ID">
+
+        <button class="btn" type="button"
+        onclick="alert('Order tracking will be available once the order tracking system is connected.')">
+            TRACK ORDER
+        </button>
+    </div>
+
+</section>
+
+<section class="container">
+
+    <h2 class="section-title">How Can We Help You?</h2>
+
+    <div class="support-grid">
+
+        <div class="support-card">
+            <div class="icon">🛒</div>
+            <h3>Order Confirmation</h3>
+            <p>Get help with order confirmation and order details.</p>
+        </div>
+
+        <div class="support-card">
+            <div class="icon">🚚</div>
+            <h3>Shipping & Delivery</h3>
+            <p>Find help with shipping updates and delivery delays.</p>
+        </div>
+
+        <div class="support-card">
+            <div class="icon">❌</div>
+            <h3>Cancel Order</h3>
+            <p>Contact our support team for order cancellation requests.</p>
+        </div>
+
+        <div class="support-card">
+            <div class="icon">📦</div>
+            <h3>Missing Order</h3>
+            <p>Get assistance if your order has not arrived.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="container">
+
+    <h2 class="section-title">Order Information</h2>
+
+    <div class="info-box">
+        <h3>Order Not Confirmed?</h3>
+        <p>Check your email or order confirmation message. If you do not receive confirmation, contact our support team.</p>
+    </div>
+
+    <div class="info-box">
+        <h3>Delivery Delayed?</h3>
+        <p>Delivery dates may change due to courier or location-related issues. Check your tracking details for updates.</p>
+    </div>
+
+    <div class="info-box">
+        <h3>Want to Cancel Your Order?</h3>
+        <p>Contact support as soon as possible. Cancellation depends on the order processing and shipping status.</p>
+    </div>
+
+</section>
+
+<section class="container">
+
+    <h2 class="section-title">Frequently Asked Questions</h2>
+
+    <div class="faq">
+        <h3>Q1. How can I track my order?</h3>
+        <p>Enter your Order ID in the tracking section. Live tracking requires a connected order management system.</p>
+    </div>
+
+    <div class="faq">
+        <h3>Q2. Can I change my delivery address?</h3>
+        <p>Contact support as early as possible. Changes may not be possible after dispatch.</p>
+    </div>
+
+    <div class="faq">
+        <h3>Q3. What if I receive the wrong product?</h3>
+        <p>Contact support with your order details and clear product photos for assistance.</p>
+    </div>
+
+    <div class="faq">
+        <h3>Q4. How can I cancel my order?</h3>
+        <p>Send a cancellation request through our Contact page. Cancellation is subject to order status and policy.</p>
+    </div>
+
+</section>
+
+<section class="contact">
+    <h2>Still Need Help?</h2>
+    <p>Our support team is ready to assist you with your order-related questions.</p>
+    <a href="contact.html" class="btn">CONTACT SUPPORT</a>
+</section>
+
+<footer>
+    © 2026 <span>PB32 SHOES</span> | All Rights Reserved.
+</footer>
+
+</body>
+</html>
