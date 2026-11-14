@@ -1,0 +1,447 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PB32 SHOES | Admin Dashboard</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f3f4f6;
+    color: #222;
+}
+
+header {
+    background: #111;
+    color: white;
+    padding: 22px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+header h1 {
+    font-size: 25px;
+    letter-spacing: 1px;
+}
+
+header span {
+    color: #f5b400;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    padding: 11px 18px;
+    font-weight: bold;
+}
+
+#logoutBtn {
+    background: #f5b400;
+    color: #111;
+    display: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 35px auto;
+}
+
+.login-box {
+    background: white;
+    max-width: 420px;
+    margin: 65px auto;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px #00000012;
+}
+
+.login-box h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+input {
+    width: 100%;
+    padding: 13px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+#loginBtn {
+    width: 100%;
+    background: #f5b400;
+    color: #111;
+    margin-top: 12px;
+}
+
+#message {
+    text-align: center;
+    margin-top: 15px;
+    color: #c0392b;
+    overflow-wrap: anywhere;
+}
+
+.dashboard {
+    display: none;
+}
+
+.dashboard-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.dashboard-top h2 {
+    font-size: 26px;
+}
+
+#refreshBtn {
+    background: #111;
+    color: white;
+}
+
+.order-card {
+    background: white;
+    padding: 22px;
+    margin-bottom: 18px;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px #0000000c;
+    border-left: 5px solid #f5b400;
+}
+
+.order-card h3 {
+    margin-bottom: 14px;
+    color: #111;
+}
+
+.order-card p {
+    margin: 9px 0;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.status-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.status-row select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.status-row button {
+    background: #111;
+    color: white;
+}
+
+#ordersMessage {
+    margin: 15px 0;
+    color: #555;
+}
+
+@media(max-width:600px) {
+    header {
+        padding: 18px 5%;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+    .login-box {
+        padding: 25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>PB32 <span>SHOES</span> | ADMIN</h1>
+    <button id="logoutBtn">LOGOUT</button>
+</header>
+
+<div class="container">
+
+    <div class="login-box" id="loginBox">
+        <h2>Admin Login</h2>
+
+        <form id="loginForm">
+            <input
+                type="email"
+                id="adminEmail"
+                placeholder="Admin Email"
+                autocomplete="username"
+                required
+            >
+
+            <input
+                type="password"
+                id="adminPassword"
+                placeholder="Password"
+                autocomplete="current-password"
+                required
+            >
+
+            <button type="submit" id="loginBtn">
+                LOGIN
+            </button>
+        </form>
+
+        <p id="message"></p>
+    </div>
+
+    <div class="dashboard" id="dashboard">
+
+        <div class="dashboard-top">
+            <h2>Customer Orders</h2>
+            <button id="refreshBtn">REFRESH ORDERS</button>
+        </div>
+
+        <p id="ordersMessage">Loading orders...</p>
+        <div id="ordersList"></div>
+
+    </div>
+
+</div>
+
+<script type="module">
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/13.3.0/firebase-app.js";
+
+import {
+    getAuth,
+    signInWithEmailAndPassword,
+    onAuthStateChanged,
+    signOut
+}
+from "https://www.gstatic.com/firebasejs/13.3.0/firebase-auth.js";
+
+import {
+    getFirestore,
+    collection,
+    getDocs,
+    doc,
+    updateDoc,
+    query,
+    orderBy
+}
+from "https://www.gstatic.com/firebasejs/13.3.0/firebase-firestore.js";
+
+
+const firebaseConfig = {
+    apiKey: "AIzaSyA9LFfkR_flA6Y2W3oKEtJSSKytgqty1zQ",
+    authDomain: "pb32-shoes.firebaseapp.com",
+    projectId: "pb32-shoes",
+    storageBucket: "pb32-shoes.firebasestorage.app",
+    messagingSenderId: "535811826741",
+    appId: "1:535811826741:web:71b0aff54f39350ce43d7c"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+const ADMIN_UID = "7uxCF7qexTObESKWgPWPNFJnMtn1";
+
+const loginBox = document.getElementById("loginBox");
+const dashboard = document.getElementById("dashboard");
+const loginForm = document.getElementById("loginForm");
+const message = document.getElementById("message");
+const ordersList = document.getElementById("ordersList");
+const ordersMessage = document.getElementById("ordersMessage");
+const logoutBtn = document.getElementById("logoutBtn");
+
+
+loginForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    message.textContent = "Logging in...";
+
+    const email = document.getElementById("adminEmail").value;
+    const password = document.getElementById("adminPassword").value;
+
+    try {
+        await signInWithEmailAndPassword(auth, email, password);
+        message.textContent = "";
+    } catch (error) {
+        message.textContent = "Login failed: " + error.message;
+    }
+});
+
+
+onAuthStateChanged(auth, async (user) => {
+
+    if (!user) {
+        loginBox.style.display = "block";
+        dashboard.style.display = "none";
+        logoutBtn.style.display = "none";
+        return;
+    }
+
+    if (user.uid !== ADMIN_UID) {
+        await signOut(auth);
+        message.textContent = "Access denied. Admin account only.";
+        return;
+    }
+
+    loginBox.style.display = "none";
+    dashboard.style.display = "block";
+    logoutBtn.style.display = "inline-block";
+
+    await loadOrders();
+});
+
+
+logoutBtn.addEventListener("click", async () => {
+    await signOut(auth);
+});
+
+
+document.getElementById("refreshBtn").addEventListener(
+    "click",
+    loadOrders
+);
+
+
+async function loadOrders() {
+
+    ordersMessage.textContent = "Loading orders...";
+    ordersList.replaceChildren();
+
+    try {
+
+        const ordersQuery = query(
+            collection(db, "orders"),
+            orderBy("createdAt", "desc")
+        );
+
+        const snapshot = await getDocs(ordersQuery);
+
+        if (snapshot.empty) {
+            ordersMessage.textContent = "No orders found.";
+            return;
+        }
+
+        ordersMessage.textContent =
+            "Total Orders: " + snapshot.size;
+
+        snapshot.forEach((orderDoc) => {
+
+            const order = orderDoc.data();
+
+            const card = document.createElement("div");
+            card.className = "order-card";
+
+            const heading = document.createElement("h3");
+            heading.textContent =
+                "Order ID: " + orderDoc.id;
+
+            card.appendChild(heading);
+
+            function addDetail(label, value) {
+                const p = document.createElement("p");
+                p.textContent = label + ": " +
+                    (value ?? "Not provided");
+                card.appendChild(p);
+            }
+
+            addDetail("Customer", order.name);
+            addDetail("Mobile", order.phone);
+            addDetail("Email", order.email);
+            addDetail("Product", order.product);
+            addDetail("Shoe Size", order.size);
+            addDetail("Quantity", order.quantity);
+            addDetail("Address", order.address);
+            addDetail("Payment", order.payment);
+            addDetail("Instructions", order.instructions);
+
+            const statusRow = document.createElement("div");
+            statusRow.className = "status-row";
+
+            const statusLabel = document.createElement("strong");
+            statusLabel.textContent = "Order Status:";
+
+            const select = document.createElement("select");
+
+            ["Pending", "Confirmed", "Delivered", "Cancelled"]
+                .forEach((status) => {
+                    const option = document.createElement("option");
+                    option.value = status;
+                    option.textContent = status;
+                    select.appendChild(option);
+                });
+
+            select.value = [
+                "Pending", "Confirmed", "Delivered", "Cancelled"
+            ].includes(order.status) ? order.status : "Pending";
+
+            const saveBtn = document.createElement("button");
+            saveBtn.textContent = "SAVE STATUS";
+
+            saveBtn.addEventListener("click", async () => {
+
+                saveBtn.disabled = true;
+                saveBtn.textContent = "SAVING...";
+
+                try {
+                    await updateDoc(
+                        doc(db, "orders", orderDoc.id),
+                        { status: select.value }
+                    );
+
+                    saveBtn.textContent = "SAVED!";
+                } catch (error) {
+                    alert("Could not update status: " + error.message);
+                    saveBtn.textContent = "SAVE STATUS";
+                }
+
+                saveBtn.disabled = false;
+            });
+
+            statusRow.appendChild(statusLabel);
+            statusRow.appendChild(select);
+            statusRow.appendChild(saveBtn);
+
+            card.appendChild(statusRow);
+            ordersList.appendChild(card);
+
+        });
+
+    } catch (error) {
+
+        ordersMessage.textContent =
+            "Error loading orders: " + error.message;
+
+    }
+}
+
+</script>
+
+</body>
+</html>
