@@ -1,0 +1,484 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Delivery Help | PB32 SHOES</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: #080808;
+    color: white;
+}
+
+header {
+    background: #111;
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #d4af5a;
+}
+
+.logo {
+    color: #d4af5a;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #d4af5a;
+}
+
+.hero {
+    text-align: center;
+    padding: 85px 20px;
+    background: linear-gradient(135deg, #1b1b1b, #050505);
+}
+
+.hero h1 {
+    color: #d4af5a;
+    font-size: 42px;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    color: #ccc;
+    line-height: 1.8;
+}
+
+.container {
+    width: 85%;
+    max-width: 1100px;
+    margin: 60px auto;
+}
+
+.section-title {
+    text-align: center;
+    color: #d4af5a;
+    font-size: 28px;
+    margin-bottom: 35px;
+}
+
+.track-box {
+    max-width: 650px;
+    margin: auto;
+    padding: 35px;
+    background: #151515;
+    border: 1px solid #333;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.track-box h2 {
+    color: #d4af5a;
+    margin-bottom: 15px;
+}
+
+.track-box p {
+    color: #bbb;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.track-box input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 15px;
+    background: #080808;
+    border: 1px solid #555;
+    color: white;
+    border-radius: 5px;
+}
+
+.btn {
+    display: inline-block;
+    background: #d4af5a;
+    color: #111;
+    padding: 13px 25px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: white;
+}
+
+.help-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+.help-card {
+    background: #151515;
+    padding: 28px 22px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.help-card:hover {
+    border-color: #d4af5a;
+    transform: translateY(-5px);
+}
+
+.help-card .icon {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.help-card h3 {
+    color: #d4af5a;
+    margin-bottom: 12px;
+}
+
+.help-card p {
+    color: #bbb;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.info-box {
+    background: #151515;
+    padding: 25px;
+    margin-bottom: 18px;
+    border-left: 4px solid #d4af5a;
+    border-radius: 8px;
+}
+
+.info-box h3 {
+    color: #d4af5a;
+    margin-bottom: 10px;
+}
+
+.info-box p {
+    color: #bbb;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.step {
+    background: #151515;
+    padding: 25px;
+    text-align: center;
+    border: 1px solid #333;
+    border-radius: 10px;
+}
+
+.step span {
+    color: #d4af5a;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.step h3 {
+    color: #d4af5a;
+    margin: 12px 0;
+}
+
+.step p {
+    color: #bbb;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.faq {
+    background: #151515;
+    padding: 22px;
+    margin-bottom: 15px;
+    border: 1px solid #333;
+    border-radius: 8px;
+}
+
+.faq h3 {
+    color: #d4af5a;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.faq p {
+    color: #bbb;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.contact {
+    text-align: center;
+    background: #171717;
+    padding: 55px 20px;
+    margin-top: 60px;
+}
+
+.contact h2 {
+    color: #d4af5a;
+    margin-bottom: 15px;
+}
+
+.contact p {
+    color: #ccc;
+    margin-bottom: 25px;
+    line-height: 1.8;
+}
+
+footer {
+    background: #050505;
+    text-align: center;
+    padding: 25px;
+    color: #999;
+    border-top: 1px solid #333;
+    font-size: 13px;
+}
+
+footer span {
+    color: #d4af5a;
+}
+
+@media(max-width: 700px) {
+    header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav {
+        text-align: center;
+        line-height: 2.5;
+    }
+
+    nav a {
+        margin: 0 7px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .container {
+        width: 90%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">PB32 SHOES</div>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="support.html">SUPPORT</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>DELIVERY HELP</h1>
+    <p>
+        Your favourite shoes, delivered to your doorstep.<br>
+        Get help with shipping, delivery and order updates.
+    </p>
+</section>
+
+<section class="container">
+
+    <h2 class="section-title">Track Your Delivery</h2>
+
+    <div class="track-box">
+        <h2>🚚 Where Is My Order?</h2>
+
+        <p>Enter your Order ID to check your delivery status.</p>
+
+        <input type="text" id="orderId" placeholder="Enter Your Order ID">
+
+        <button class="btn" onclick="trackOrder()">TRACK DELIVERY</button>
+
+        <p id="trackMessage" style="margin-top:18px;"></p>
+    </div>
+
+</section>
+
+<section class="container">
+
+    <h2 class="section-title">Delivery Services</h2>
+
+    <div class="help-grid">
+
+        <div class="help-card">
+            <div class="icon">📦</div>
+            <h3>Order Shipping</h3>
+            <p>Get information about order processing and shipping updates.</p>
+        </div>
+
+        <div class="help-card">
+            <div class="icon">🚚</div>
+            <h3>Delivery Status</h3>
+            <p>Find help with your parcel's delivery progress.</p>
+        </div>
+
+        <div class="help-card">
+            <div class="icon">📍</div>
+            <h3>Address Issues</h3>
+            <p>Contact support if you need help with your delivery address.</p>
+        </div>
+
+        <div class="help-card">
+            <div class="icon">⏰</div>
+            <h3>Delayed Delivery</h3>
+            <p>Get assistance if your order is taking longer than expected.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="container">
+
+    <h2 class="section-title">Delivery Information</h2>
+
+    <div class="info-box">
+        <h3>1. Order Processing</h3>
+        <p>Your order will be processed after successful confirmation. Processing time depends on product availability and business operations.</p>
+    </div>
+
+    <div class="info-box">
+        <h3>2. Shipping Updates</h3>
+        <p>Once your order is dispatched, tracking details can be shared through the available order communication channel.</p>
+    </div>
+
+    <div class="info-box">
+        <h3>3. Delivery Delays</h3>
+        <p>Delivery may be delayed due to courier operations, weather, holidays or location-related issues.</p>
+    </div>
+
+    <div class="info-box">
+        <h3>4. Wrong Delivery Address</h3>
+        <p>Contact support as soon as possible if your address needs correction. Changes may not be possible after dispatch.</p>
+    </div>
+
+    <div class="info-box">
+        <h3>5. Missing Parcel</h3>
+        <p>If your tracking shows delivered but you have not received your parcel, contact support with your Order ID.</p>
+    </div>
+
+</section>
+
+<section class="container">
+
+    <h2 class="section-title">How Delivery Works</h2>
+
+    <div class="steps">
+
+        <div class="step">
+            <span>01</span>
+            <h3>Order Placed</h3>
+            <p>Your shoe order is received successfully.</p>
+        </div>
+
+        <div class="step">
+            <span>02</span>
+            <h3>Order Packed</h3>
+            <p>Your product is prepared for dispatch.</p>
+        </div>
+
+        <div class="step">
+            <span>03</span>
+            <h3>Order Shipped</h3>
+            <p>Your parcel is handed over to the delivery partner.</p>
+        </div>
+
+        <div class="step">
+            <span>04</span>
+            <h3>Delivered</h3>
+            <p>Your shoes reach your delivery address.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="container">
+
+    <h2 class="section-title">Frequently Asked Questions</h2>
+
+    <div class="faq">
+        <h3>Q1. How can I track my delivery?</h3>
+        <p>Enter your Order ID above. Live tracking will work once connected to an order management system.</p>
+    </div>
+
+    <div class="faq">
+        <h3>Q2. What if my delivery is delayed?</h3>
+        <p>Check your latest tracking update and contact support if you need further assistance.</p>
+    </div>
+
+    <div class="faq">
+        <h3>Q3. Can I change my delivery address?</h3>
+        <p>Contact support immediately. Address changes depend on the order's shipping status.</p>
+    </div>
+
+    <div class="faq">
+        <h3>Q4. What if my parcel is marked delivered but I haven't received it?</h3>
+        <p>Check with household members or your building's reception, then contact our support team with your Order ID.</p>
+    </div>
+
+</section>
+
+<section class="contact">
+    <h2>Need Delivery Assistance?</h2>
+    <p>Our support team is ready to help with your delivery questions.</p>
+    <a href="contact.html" class="btn">CONTACT SUPPORT</a>
+</section>
+
+<footer>
+    © 2026 <span>PB32 SHOES</span> | All Rights Reserved.
+</footer>
+
+<script>
+function trackOrder() {
+    const orderId = document.getElementById("orderId").value.trim();
+    const message = document.getElementById("trackMessage");
+
+    if (orderId === "") {
+        message.style.color = "#ff7777";
+        message.innerText = "Please enter your Order ID.";
+        return;
+    }
+
+    message.style.color = "#d4af5a";
+    message.innerText = "Tracking system is not connected yet. Please contact our support team.";
+}
+</script>
+
+</body>
+</html>
