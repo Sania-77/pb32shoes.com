@@ -1,0 +1,439 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Product Information | PB32 SHOES</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: #080808;
+    color: white;
+}
+
+header {
+    background: #111;
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #d4af5a;
+}
+
+.logo {
+    color: #d4af5a;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #d4af5a;
+}
+
+.hero {
+    text-align: center;
+    padding: 85px 20px;
+    background: linear-gradient(135deg, #1b1b1b, #050505);
+}
+
+.hero h1 {
+    color: #d4af5a;
+    font-size: 42px;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    color: #ccc;
+    line-height: 1.8;
+}
+
+.container {
+    width: 85%;
+    max-width: 1100px;
+    margin: 60px auto;
+}
+
+.section-title {
+    text-align: center;
+    color: #d4af5a;
+    font-size: 28px;
+    margin-bottom: 35px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+.product-card {
+    background: #151515;
+    padding: 28px 22px;
+    border: 1px solid #333;
+    border-radius: 12px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    border-color: #d4af5a;
+    transform: translateY(-5px);
+}
+
+.product-card .icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    color: #d4af5a;
+    margin-bottom: 12px;
+}
+
+.product-card p {
+    color: #bbb;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.info-box {
+    background: #151515;
+    padding: 28px;
+    margin-bottom: 20px;
+    border-left: 4px solid #d4af5a;
+    border-radius: 8px;
+}
+
+.info-box h3 {
+    color: #d4af5a;
+    margin-bottom: 12px;
+}
+
+.info-box p {
+    color: #bbb;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.size-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 15px;
+}
+
+.size {
+    background: #151515;
+    padding: 20px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    text-align: center;
+    color: #d4af5a;
+    font-weight: 700;
+}
+
+.care-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+.care-card {
+    background: #151515;
+    padding: 25px;
+    border: 1px solid #333;
+    border-radius: 10px;
+}
+
+.care-card h3 {
+    color: #d4af5a;
+    margin-bottom: 12px;
+}
+
+.care-card p {
+    color: #bbb;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.faq {
+    background: #151515;
+    padding: 22px;
+    margin-bottom: 15px;
+    border: 1px solid #333;
+    border-radius: 8px;
+}
+
+.faq h3 {
+    color: #d4af5a;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.faq p {
+    color: #bbb;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.contact {
+    text-align: center;
+    background: #171717;
+    padding: 55px 20px;
+    margin-top: 60px;
+}
+
+.contact h2 {
+    color: #d4af5a;
+    margin-bottom: 15px;
+}
+
+.contact p {
+    color: #ccc;
+    margin-bottom: 25px;
+    line-height: 1.8;
+}
+
+.btn {
+    display: inline-block;
+    background: #d4af5a;
+    color: #111;
+    padding: 13px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.btn:hover {
+    background: white;
+}
+
+footer {
+    background: #050505;
+    text-align: center;
+    padding: 25px;
+    color: #999;
+    border-top: 1px solid #333;
+    font-size: 13px;
+}
+
+footer span {
+    color: #d4af5a;
+}
+
+@media(max-width: 700px) {
+    header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav {
+        text-align: center;
+        line-height: 2.5;
+    }
+
+    nav a {
+        margin: 0 7px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .container {
+        width: 90%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">PB32 SHOES</div>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="support.html">SUPPORT</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>PRODUCT INFORMATION</h1>
+    <p>
+        Discover the details behind every step.<br>
+        Explore shoe features, materials, sizes and care instructions.
+    </p>
+</section>
+
+<section class="container">
+
+    <h2 class="section-title">Our Product Features</h2>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <div class="icon">👟</div>
+            <h3>Premium Design</h3>
+            <p>Modern shoe designs created for style and everyday fashion.</p>
+        </div>
+
+        <div class="product-card">
+            <div class="icon">☁️</div>
+            <h3>Comfort</h3>
+            <p>Explore comfortable footwear options for your daily activities.</p>
+        </div>
+
+        <div class="product-card">
+            <div class="icon">🧵</div>
+            <h3>Quality Materials</h3>
+            <p>Product materials and construction details are provided for each shoe.</p>
+        </div>
+
+        <div class="product-card">
+            <div class="icon">✨</div>
+            <h3>Stylish Collection</h3>
+            <p>Find footwear styles for casual, sports and everyday occasions.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="container">
+
+    <h2 class="section-title">Product Details</h2>
+
+    <div class="info-box">
+        <h3>Material Information</h3>
+        <p>Material may vary by shoe model. Please check the individual product description for upper, lining and sole materials.</p>
+    </div>
+
+    <div class="info-box">
+        <h3>Sole & Grip</h3>
+        <p>Check the product listing for sole material, grip and usage recommendations before purchasing.</p>
+    </div>
+
+    <div class="info-box">
+        <h3>Available Colours</h3>
+        <p>Colour options depend on the selected shoe model and current stock availability.</p>
+    </div>
+
+    <div class="info-box">
+        <h3>Product Availability</h3>
+        <p>Sizes, colours and designs may change depending on inventory.</p>
+    </div>
+
+</section>
+
+<section class="container">
+
+    <h2 class="section-title">Shoe Size Information</h2>
+
+    <p style="text-align:center;color:#bbb;margin-bottom:25px;">
+        Select your shoe size from the available options on the product page.
+    </p>
+
+    <div class="size-grid">
+        <div class="size">UK 5</div>
+        <div class="size">UK 6</div>
+        <div class="size">UK 7</div>
+        <div class="size">UK 8</div>
+        <div class="size">UK 9</div>
+        <div class="size">UK 10</div>
+    </div>
+
+    <p style="text-align:center;color:#999;margin-top:20px;font-size:12px;">
+        Sample size options only. Actual sizes depend on product availability.
+    </p>
+
+</section>
+
+<section class="container">
+
+    <h2 class="section-title">How to Care for Your Shoes</h2>
+
+    <div class="care-grid">
+
+        <div class="care-card">
+            <h3>🧼 Cleaning</h3>
+            <p>Clean your shoes gently using a suitable cleaning method for their material.</p>
+        </div>
+
+        <div class="care-card">
+            <h3>☀️ Drying</h3>
+            <p>Allow shoes to air dry. Avoid excessive direct heat.</p>
+        </div>
+
+        <div class="care-card">
+            <h3>📦 Storage</h3>
+            <p>Store footwear in a clean, dry place when not in use.</p>
+        </div>
+
+        <div class="care-card">
+            <h3>💧 Protection</h3>
+            <p>Follow the care instructions for the specific material of your shoes.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="container">
+
+    <h2 class="section-title">Frequently Asked Questions</h2>
+
+    <div class="faq">
+        <h3>Q1. How can I find my shoe size?</h3>
+        <p>Check the size options and size chart provided on the individual product page.</p>
+    </div>
+
+    <div class="faq">
+        <h3>Q2. Are all shoes made from the same material?</h3>
+        <p>No. Material and construction can vary depending on the shoe model.</p>
+    </div>
+
+    <div class="faq">
+        <h3>Q3. How can I check product availability?</h3>
+        <p>Visit the product listing to see available sizes, colours and stock information.</p>
+    </div>
+
+    <div class="faq">
+        <h3>Q4. Can I exchange my shoe size?</h3>
+        <p>Please visit our Return & Exchange page to learn about exchange requests and eligibility.</p>
+    </div>
+
+</section>
+
+<section class="contact">
+    <h2>Need More Product Information?</h2>
+    <p>Our team can help you with product details and shopping questions.</p>
+    <a href="contact.html" class="btn">CONTACT US</a>
+</section>
+
+<footer>
+    © 2026 <span>PB32 SHOES</span> | All Rights Reserved.
+</footer>
+
+</body>
+</html>
