@@ -1,179 +1,539 @@
-<section class="categories" id="categories">
-  <h2>Our Products</h2>
-  <p>Explore Our Latest Collection</p>
 
-  <div class="product-grid" id="productGrid"></div>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Categories | PB32 SHOES</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-.categories {
-  padding: 50px 5%;
-  text-align: center;
-  background: #fff;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.categories h2 {
-  font-size: 32px;
-  color: #222;
+body {
+    background: #f7f7f7;
+    color: #111;
 }
 
-.categories p {
-  color: #777;
-  margin-bottom: 30px;
+header {
+    background: #080808;
+    color: white;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+.logo {
+    font-size: 27px;
+    font-weight: 900;
+}
+
+.logo span {
+    color: #d4af5a;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+nav a:hover {
+    color: #d4af5a;
+}
+
+/* HERO */
+
+.hero {
+    background: linear-gradient(120deg, #080808, #292929);
+    color: white;
+    text-align: center;
+    padding: 85px 15px;
+}
+
+.hero h1 {
+    font-size: 45px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.hero h1 span {
+    color: #d4af5a;
+}
+
+.hero p {
+    color: #ccc;
+    margin-top: 17px;
+    font-size: 14px;
+}
+
+.hero a {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 14px 28px;
+    background: #d4af5a;
+    color: #080808;
+    text-decoration: none;
+    font-weight: 800;
+    border-radius: 4px;
+}
+
+/* CATEGORY INTRO */
+
+.section-title {
+    text-align: center;
+    padding: 55px 15px 20px;
+}
+
+.section-title h2 {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.section-title h2 span {
+    color: #bd902d;
+}
+
+.section-title p {
+    color: #777;
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+/* SEARCH */
+
+.search-area {
+    text-align: center;
+    padding: 20px 15px;
+}
+
+.search-area input {
+    width: 90%;
+    max-width: 450px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    font-size: 14px;
+}
+
+/* FILTERS */
+
+.filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 10px 15px 35px;
+}
+
+.filters button {
+    background: #111;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.filters button:hover,
+.filters button.active {
+    background: #d4af5a;
+    color: #111;
+}
+
+/* PRODUCTS */
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 23px;
+    padding: 10px 7% 70px;
 }
 
 .product-card {
-  border: 1px solid #eee;
-  border-radius: 12px;
-  padding: 12px;
-  background: white;
-  text-align: left;
+    background: white;
+    border-radius: 9px;
+    overflow: hidden;
+    box-shadow: 0 3px 15px #00000012;
+    transition: .3s;
+}
+
+.product-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px #00000020;
 }
 
 .product-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 9px;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    background: #eee;
+    display: block;
 }
 
-.product-card h3 {
-  font-size: 17px;
-  margin: 12px 0 6px;
+.product-info {
+    padding: 17px;
+    text-align: center;
+}
+
+.tag {
+    display: inline-block;
+    background: #fff1ce;
+    color: #8a650d;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.product-info h3 {
+    font-size: 14px;
+    margin: 13px 0;
+    min-height: 35px;
 }
 
 .price {
-  color: #e65100;
-  font-weight: bold;
-  font-size: 19px;
+    font-size: 21px;
+    color: #a97915;
+    font-weight: 900;
+    margin-bottom: 15px;
 }
 
-.product-card a {
-  display: block;
-  text-align: center;
-  background: #222;
-  color: white;
-  padding: 10px;
-  margin-top: 12px;
-  border-radius: 7px;
-  text-decoration: none;
+.product-info a {
+    display: block;
+    background: #080808;
+    color: white;
+    padding: 12px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 800;
 }
 
-@media(max-width: 768px) {
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.product-info a:hover {
+    background: #d4af5a;
+    color: #111;
 }
 
-@media(max-width: 480px) {
-  .product-grid {
-    grid-template-columns: 1fr;
-  }
+.empty {
+    display: none;
+    text-align: center;
+    padding: 40px;
+    color: #777;
+}
+
+/* FOOTER */
+
+footer {
+    background: #080808;
+    color: white;
+    text-align: center;
+    padding: 40px 15px;
+    line-height: 2;
+}
+
+footer h2 span {
+    color: #d4af5a;
+}
+
+footer p {
+    color: #bbb;
+    font-size: 13px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 950px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 550px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+        padding-left: 9%;
+        padding-right: 9%;
+    }
+
+    .section-title h2 {
+        font-size: 24px;
+    }
 }
 </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">PB32 <span>SHOES.</span></div>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="categories.html">CATEGORIES</a>
+        <a href="product.html">COLLECTION</a>
+        <a href="about.html">ABOUT</a>
+        <a href="support.html">SUPPORT</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>SHOP BY <span>CATEGORY.</span></h1>
+    <p>Find your perfect pair. Discover your style with PB32 SHOES.</p>
+    <a href="product.html">EXPLORE COLLECTION</a>
+</section>
+
+<section class="section-title">
+    <h2>OUR <span>CATEGORIES</span></h2>
+    <p>Explore stylish footwear for every occasion.</p>
+</section>
+
+<div class="search-area">
+    <input
+        type="text"
+        id="search"
+        placeholder="Search shoes by name..."
+    >
+</div>
+
+<div class="filters">
+    <button class="active" onclick="filterProducts('all',this)">ALL SHOES</button>
+    <button onclick="filterProducts('men',this)">MEN</button>
+    <button onclick="filterProducts('women',this)">WOMEN</button>
+    <button onclick="filterProducts('sports',this)">SPORTS</button>
+    <button onclick="filterProducts('premium',this)">PREMIUM</button>
+</div>
+
+<div class="products" id="productGrid"></div>
+
+<div class="empty" id="empty">
+    <h3>No Shoes Found!</h3>
+    <p>Try searching with another name.</p>
+</div>
+
+<footer>
+    <h2>PB32 <span>SHOES.</span></h2>
+    <p>Step Into Style. Walk With Confidence.</p>
+    <p>© 2026 PB32 SHOES. All Rights Reserved.</p>
+</footer>
 
 <script>
+
 const products = [
-  {
-    name: "Product 1",
-    price: "",
-    image: "images/product1.jpg",
-    link: "https://www.instagram.com/p/DfrTULguFNb/"
-  },
-  {
-    name: "Product 2",
-    price: "",
-    image: "images/product2.jpg",
-    link: "https://www.instagram.com/p/Dfq4WKEPl5N/"
-  },
-  {
-    name: "Product 3",
-    price: "",
-    image: "images/product3.jpg",
-    link: "https://www.instagram.com/p/Dfq4YnNBoFZ/"
-  },
-  {
-    name: "Product 4",
-    price: "",
-    image: "images/product4.jpg",
-    link: "https://www.instagram.com/p/DfqwUzemLJ9/"
-  },
-  {
-    name: "Product 5",
-    price: "",
-    image: "images/product5.jpg",
-    link: "https://www.instagram.com/p/DfocuNwjBZ2/"
-  },
-  {
-    name: "Product 6",
-    price: "",
-    image: "images/product6.jpg",
-    link: "https://www.instagram.com/p/DfkH1JaNm1b/"
-  },
-  {
-    name: "Product 7",
-    price: "",
-    image: "images/product7.jpg",
-    link: "https://www.instagram.com/p/DfeXcTYvSyq/"
-  },
-  {
-    name: "Product 8",
-    price: "",
-    image: "images/product8.jpg",
-    link: "https://www.instagram.com/p/DfeO-roGM0K/"
-  },
-  {
-    name: "Product 9",
-    price: "",
-    image: "images/product9.jpg",
-    link: "https://www.instagram.com/p/DfUJPzrx-iK/"
-  },
-  {
-    name: "Product 10",
-    price: "",
-    image: "images/product10.jpg",
-    link: "https://www.instagram.com/p/DfT1FXhx-bF/"
-  },
-  {
-    name: "Product 11",
-    price: "",
-    image: "images/product11.jpg",
-    link: "https://www.instagram.com/p/DfRz--YJcsL/"
-  },
-  {
-    name: "Product 12",
-    price: "",
-    image: "images/product12.jpg",
-    link: "https://www.instagram.com/p/DfRP0r9mL2-/"
-  },
-  {
-    name: "Product 13",
-    price: "",
-    image: "images/product13.jpg",
-    link: "https://www.instagram.com/p/DfOtrICGMrE/"
-  }
+
+{
+name: "Classic Red Sneakers",
+category: "men",
+price: 1499,
+image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600",
+link: "product.html"
+},
+
+{
+name: "Premium White Sneakers",
+category: "premium",
+price: 2499,
+image: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=600",
+link: "product.html"
+},
+
+{
+name: "Urban Sports Shoes",
+category: "sports",
+price: 1799,
+image: "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=600",
+link: "product.html"
+},
+
+{
+name: "Women's Fashion Sneakers",
+category: "women",
+price: 1599,
+image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600",
+link: "product.html"
+},
+
+{
+name: "Black Running Shoes",
+category: "sports",
+price: 1899,
+image: "https://images.unsplash.com/photo-1539185441755-769473a23570?w=600",
+link: "product.html"
+},
+
+{
+name: "Street Style Sneakers",
+category: "men",
+price: 1299,
+image: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=600",
+link: "product.html"
+},
+
+{
+name: "Women's Casual Shoes",
+category: "women",
+price: 1399,
+image: "https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?w=600",
+link: "product.html"
+},
+
+{
+name: "Premium Running Shoes",
+category: "premium",
+price: 2999,
+image: "https://images.unsplash.com/photo-1552346154-21d32810aba3?w=600",
+link: "product.html"
+},
+
+{
+name: "Everyday White Shoes",
+category: "men",
+price: 1199,
+image: "https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?w=600",
+link: "product.html"
+},
+
+{
+name: "Women's Sports Sneakers",
+category: "sports",
+price: 1699,
+image: "https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=600",
+link: "product.html"
+},
+
+{
+name: "Premium Street Sneakers",
+category: "premium",
+price: 3499,
+image: "https://images.unsplash.com/photo-1552346154-21d32810aba3?w=600",
+link: "product.html"
+},
+
+{
+name: "Classic Women's Sneakers",
+category: "women",
+price: 1499,
+image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600",
+link: "product.html"
+}
+
 ];
 
-const grid = document.getElementById("productGrid");
+let currentFilter = "all";
 
-products.forEach((product) => {
-  grid.innerHTML += `
-    <div class="product-card">
-      <img src="${product.image}" alt="${product.name}">
-      <h3>${product.name}</h3>
-      <div class="price">
-        ${product.price ? "₹" + product.price : "Price to be updated"}
-      </div>
-      <a href="${product.link}" target="_blank">
-        View Product
-      </a>
-    </div>
-  `;
-});
+function renderProducts() {
+
+    const grid = document.getElementById("productGrid");
+    const search = document.getElementById("search")
+        .value.toLowerCase().trim();
+
+    grid.innerHTML = "";
+
+    const filtered = products.filter(product => {
+
+        const categoryMatch =
+            currentFilter === "all" ||
+            product.category === currentFilter;
+
+        const searchMatch =
+            product.name.toLowerCase().includes(search);
+
+        return categoryMatch && searchMatch;
+    });
+
+    document.getElementById("empty").style.display =
+        filtered.length === 0 ? "block" : "none";
+
+    filtered.forEach(product => {
+
+        const card = document.createElement("div");
+        card.className = "product-card";
+
+        card.innerHTML = `
+            <img
+                src="${product.image}"
+                alt="${product.name}"
+                onerror="this.style.display='none'"
+            >
+
+            <div class="product-info">
+
+                <span class="tag">${product.category}</span>
+
+                <h3>${product.name}</h3>
+
+                <div class="price">
+                    ₹${product.price.toLocaleString("en-IN")}
+                </div>
+
+                <a href="${product.link}">
+                    VIEW COLLECTION
+                </a>
+
+            </div>
+        `;
+
+        grid.appendChild(card);
+    });
+}
+
+function filterProducts(category,button) {
+
+    currentFilter = category;
+
+    document.querySelectorAll(".filters button")
+        .forEach(btn => btn.classList.remove("active"));
+
+    button.classList.add("active");
+
+    renderProducts();
+}
+
+document.getElementById("search")
+    .addEventListener("input",renderProducts);
+
+renderProducts();
+
 </script>
+
+</body>
+</html>
