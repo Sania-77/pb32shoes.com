@@ -165,12 +165,82 @@ button:hover {
 
 </div>
 
-<script>
-document.getElementById("orderForm").addEventListener("submit", function(event) {
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/13.3.0/firebase-app.js";
+
+import {
+    getFirestore,
+    collection,
+    addDoc,
+    serverTimestamp
+} from "https://www.gstatic.com/firebasejs/13.3.0/firebase-firestore.js";
+
+// Firebase Configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyA9LFfkR_flA6Y2W3oKEtJSSKytgqty1zQ",
+    authDomain: "pb32-shoes.firebaseapp.com",
+    projectId: "pb32-shoes",
+    storageBucket: "pb32-shoes.firebasestorage.app",
+    messagingSenderId: "535811826741",
+    appId: "1:535811826741:web:71b0aff54f39350ce43d7c"
+};
+
+// Connect Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+// Automatically fill product name from URL
+const params = new URLSearchParams(window.location.search);
+const product = params.get("product");
+
+if (product) {
+    document.getElementById("productName").value = product;
+}
+
+// Submit Order
+document.getElementById("orderForm").addEventListener("submit", async function(event) {
     event.preventDefault();
-    alert("Your order form is ready! Please connect an order service to submit it.");
+
+    const form = this;
+    const button = form.querySelector("button[type='submit']");
+
+    button.disabled = true;
+    button.textContent = "Submitting...";
+
+    const formData = new FormData(form);
+
+    const orderData = {
+        name: formData.get("name").trim(),
+        phone: formData.get("phone").trim(),
+        email: formData.get("email").trim(),
+        product: formData.get("product").trim(),
+        size: formData.get("size"),
+        quantity: Number(formData.get("quantity")),
+        address: formData.get("address").trim(),
+        payment: formData.get("payment"),
+        instructions: formData.get("instructions").trim(),
+        createdAt: serverTimestamp()
+    };
+
+    try {
+        const docRef = await addDoc(collection(db, "orders"), orderData);
+
+        alert("Order submitted successfully! Your Order ID is: " + docRef.id);
+
+        form.reset();
+
+    } catch (error) {
+        console.error("Order Error:", error);
+        alert("Order could not be submitted. Please try again.");
+
+    } finally {
+        button.disabled = false;
+        button.textContent = "PLACE ORDER";
+    }
 });
 </script>
+
 
 </body>
 </html>
