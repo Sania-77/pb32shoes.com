@@ -235,9 +235,11 @@ form.addEventListener("submit", async function(e) {
         );
 
         message.style.color = "#8ee6a1";
-        message.textContent = "Login successful! Welcome to PB32 SHOES.";
+message.textContent = "Login successful! Welcome to PB32 SHOES.";
 
-        form.reset();
+setTimeout(() => {
+    window.location.href = "dashboard.html";
+}, 1000);
 
     } catch(error) {
 
