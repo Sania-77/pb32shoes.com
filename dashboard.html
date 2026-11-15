@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customer Dashboard | PB32 SHOES</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #080808;
+    color: white;
+    min-height: 100vh;
+}
+
+header {
+    padding: 22px 8%;
+    border-bottom: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #e5a900;
+    font-size: 25px;
+    font-weight: 900;
+}
+
+header a {
+    color: #e5a900;
+    text-decoration: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 700px;
+    margin: 70px auto;
+    padding: 40px;
+    background: #151515;
+    border: 1px solid #b98b00;
+    border-radius: 18px;
+    text-align: center;
+}
+
+h1 {
+    color: #e5a900;
+    margin-bottom: 15px;
+}
+
+p {
+    color: #ccc;
+    margin: 12px 0;
+    overflow-wrap: anywhere;
+}
+
+.info {
+    background: #222;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 25px 0;
+}
+
+button {
+    background: #e5a900;
+    color: #080808;
+    border: none;
+    padding: 13px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover {
+    background: white;
+}
+
+#status {
+    margin-top: 20px;
+    color: #e5a900;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">PB32 SHOES</div>
+    <a href="index.html">HOME →</a>
+</header>
+
+<div class="container">
+    <h1>MY DASHBOARD</h1>
+    <p>Welcome to PB32 SHOES!</p>
+
+    <div class="info">
+        <p><strong>Customer Name:</strong></p>
+        <p id="customerName">Loading...</p>
+
+        <p><strong>Email Address:</strong></p>
+        <p id="customerEmail">Loading...</p>
+    </div>
+
+    <button id="logoutBtn">LOGOUT</button>
+
+    <p id="status"></p>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/13.3.0/firebase-app.js";
+
+import {
+    getAuth,
+    onAuthStateChanged,
+    signOut
+} from "https://www.gstatic.com/firebasejs/13.3.0/firebase-auth.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyA9LFfkR_flA6Y2W3oKEtJSSKytgqty1zQ",
+    authDomain: "pb32-shoes.firebaseapp.com",
+    projectId: "pb32-shoes",
+    storageBucket: "pb32-shoes.firebasestorage.app",
+    messagingSenderId: "535811826741",
+    appId: "1:535811826741:web:71b0aff54f39350ce43d7c"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        document.getElementById("customerName").textContent =
+            user.displayName || "Customer";
+
+        document.getElementById("customerEmail").textContent =
+            user.email || "Not available";
+    } else {
+        window.location.href = "login.html";
+    }
+});
+
+document.getElementById("logoutBtn").addEventListener("click", async () => {
+    try {
+        await signOut(auth);
+        window.location.href = "login.html";
+    } catch (error) {
+        document.getElementById("status").textContent =
+            "Logout failed. Please try again.";
+    }
+});
+</script>
+
+</body>
+</html>
