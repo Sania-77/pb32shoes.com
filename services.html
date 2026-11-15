@@ -1,0 +1,410 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Services | PB32 SHOES</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Montserrat',sans-serif;
+}
+
+body{
+    background:#080808;
+    color:white;
+}
+
+header{
+    background:#111;
+    padding:20px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:15px;
+    border-bottom:1px solid #333;
+}
+
+.logo{
+    color:#d4af37;
+    font-size:27px;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+nav{
+    display:flex;
+    gap:22px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:12px;
+    font-weight:700;
+    transition:.3s;
+}
+
+nav a:hover,
+nav a.active{
+    color:#d4af37;
+}
+
+.hero{
+    padding:100px 20px;
+    text-align:center;
+    background:linear-gradient(135deg,#242016,#080808,#171717);
+}
+
+.hero h1{
+    font-size:52px;
+    color:#d4af37;
+    font-weight:900;
+    letter-spacing:3px;
+}
+
+.line{
+    height:4px;
+    width:80px;
+    background:#d4af37;
+    margin:22px auto;
+    border-radius:10px;
+}
+
+.hero p{
+    max-width:720px;
+    margin:auto;
+    color:#ccc;
+    font-size:15px;
+    line-height:1.9;
+}
+
+.services{
+    padding:80px 8%;
+}
+
+.heading{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.heading h2{
+    font-size:34px;
+    color:#d4af37;
+}
+
+.heading p{
+    color:#aaa;
+    margin-top:12px;
+    font-size:14px;
+}
+
+.container{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+}
+
+.card{
+    background:#151515;
+    border:1px solid #383838;
+    border-radius:15px;
+    padding:40px 35px;
+    transition:.3s;
+    position:relative;
+    overflow:hidden;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#d4af37;
+    box-shadow:0 12px 30px #d4af3720;
+}
+
+.number{
+    color:#d4af37;
+    font-size:13px;
+    font-weight:800;
+    letter-spacing:2px;
+}
+
+.icon{
+    font-size:43px;
+    margin:22px 0;
+}
+
+.card h3{
+    color:#d4af37;
+    font-size:23px;
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#bbb;
+    font-size:13px;
+    line-height:1.9;
+    min-height:75px;
+}
+
+.card a{
+    display:inline-block;
+    margin-top:22px;
+    padding:13px 24px;
+    background:#d4af37;
+    color:#111;
+    text-decoration:none;
+    font-size:12px;
+    font-weight:800;
+    border-radius:5px;
+    transition:.3s;
+}
+
+.card a:hover{
+    background:white;
+}
+
+.why{
+    background:#121212;
+    padding:65px 8%;
+    text-align:center;
+}
+
+.why h2{
+    color:#d4af37;
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+.why p{
+    color:#bbb;
+    max-width:750px;
+    margin:auto;
+    font-size:14px;
+    line-height:1.9;
+}
+
+.cta{
+    padding:75px 20px;
+    text-align:center;
+}
+
+.cta h2{
+    color:#d4af37;
+    font-size:30px;
+}
+
+.cta p{
+    color:#bbb;
+    margin:18px 0 28px;
+    font-size:14px;
+}
+
+.cta a{
+    display:inline-block;
+    background:#d4af37;
+    color:#111;
+    padding:14px 30px;
+    text-decoration:none;
+    font-weight:800;
+    border-radius:5px;
+}
+
+footer{
+    background:#111;
+    border-top:1px solid #333;
+    padding:35px 8%;
+    text-align:center;
+}
+
+footer h3{
+    color:#d4af37;
+    font-size:23px;
+    margin-bottom:12px;
+}
+
+footer p{
+    color:#aaa;
+    font-size:12px;
+    line-height:2;
+}
+
+footer a{
+    color:#d4af37;
+    text-decoration:none;
+    margin:8px;
+    font-size:12px;
+}
+
+@media(max-width:700px){
+    header{
+        justify-content:center;
+    }
+
+    nav{
+        justify-content:center;
+        gap:14px;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .container{
+        grid-template-columns:1fr;
+    }
+
+    .heading h2{
+        font-size:27px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">PB32 SHOES.</div>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="categories.html">CATEGORIES</a>
+        <a href="product.html">COLLECTION</a>
+        <a href="about.html">ABOUT</a>
+        <a href="services.html" class="active">SERVICES</a>
+        <a href="support.html">SUPPORT</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>OUR SERVICES</h1>
+    <div class="line"></div>
+
+    <p>
+        Explore the services of PB32 SHOES.
+        From creative web design and website development
+        to digital marketing and customer support,
+        discover what we offer in the digital world.
+    </p>
+</section>
+
+<section class="services">
+
+    <div class="heading">
+        <h2>What We Do</h2>
+        <p>Discover our services and explore each section.</p>
+    </div>
+
+    <div class="container">
+
+        <div class="card">
+            <div class="number">01 / CREATIVE DESIGN</div>
+            <div class="icon">🎨</div>
+
+            <h3>Web Design</h3>
+
+            <p>
+                Explore creative website layouts, attractive
+                visual elements, modern colours and user-friendly
+                designs for an engaging online experience.
+            </p>
+
+            <a href="webdesign.html">EXPLORE WEB DESIGN →</a>
+        </div>
+
+        <div class="card">
+            <div class="number">02 / TECHNOLOGY</div>
+            <div class="icon">💻</div>
+
+            <h3>Development</h3>
+
+            <p>
+                Learn how modern websites are built using
+                HTML, CSS and JavaScript with responsive layouts,
+                interactive features and smooth navigation.
+            </p>
+
+            <a href="development.html">EXPLORE DEVELOPMENT →</a>
+        </div>
+
+        <div class="card">
+            <div class="number">03 / ONLINE PRESENCE</div>
+            <div class="icon">📱</div>
+
+            <h3>Digital Marketing</h3>
+
+            <p>
+                Discover SEO, social media marketing,
+                content creation and digital strategies
+                that help build online brand awareness.
+            </p>
+
+            <a href="digitalmarketing.html">EXPLORE MARKETING →</a>
+        </div>
+
+        <div class="card">
+            <div class="number">04 / CUSTOMER CARE</div>
+            <div class="icon">💬</div>
+
+            <h3>Support</h3>
+
+            <p>
+                Get assistance with order-related questions,
+                returns and exchanges, payment information,
+                delivery help and general enquiries.
+            </p>
+
+            <a href="support.html">GET SUPPORT →</a>
+        </div>
+
+    </div>
+</section>
+
+<section class="why">
+    <h2>Our Commitment</h2>
+
+    <p>
+        At PB32 SHOES, we focus on creative presentation,
+        modern website experiences and helpful customer
+        information. Our aim is to make every interaction
+        simple, clear and user-friendly.
+    </p>
+</section>
+
+<section class="cta">
+    <h2>Explore PB32 SHOES</h2>
+
+    <p>
+        Discover our website, explore our services
+        and step into style with confidence.
+    </p>
+
+    <a href="index.html">VISIT HOMEPAGE →</a>
+</section>
+
+<footer>
+    <h3>PB32 SHOES.</h3>
+
+    <p>Step Into Style. Walk With Confidence.</p>
+
+    <p style="margin:15px 0;">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+    </p>
+
+    <p>© 2026 PB32 SHOES. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
