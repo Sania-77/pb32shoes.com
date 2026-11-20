@@ -9,111 +9,49 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-}
 
-html {
-    scroll-behavior: smooth;
-}
+/* PREMIUM HERO DESIGN */
 
-body {
-    background: #f8f8f8;
-    color: #111;
-}
-
-header {
-    background: #080808;
-    color: white;
-    padding: 20px 7%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.logo {
-    font-size: 27px;
-    font-weight: 900;
-    letter-spacing: 1px;
-}
-
-.logo span {
-    color: #e5a900;
-}
-
-nav {
-    display: flex;
-    gap: 30px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 600;
-}
-
-nav a:hover {
-    color: #e5a900;
-}
-
-
-nav a.signup-btn {
-    background: linear-gradient(135deg, #e5a900, #ffd966);
-    color: #080808;
-    padding: 12px 22px;
-    border-radius: 30px;
-    font-weight: 800;
-    box-shadow: 0 4px 15px rgba(229,169,0,0.25);
-    transition: 0.3s;
-}
-
-nav a.signup-btn:hover {
-    background: white;
-    color: #080808;
-    transform: translateY(-3px);
-}
-
-    nav a.login-btn {
-    border: 1px solid #e5a900;
-    color: #e5a900;
-    padding: 11px 20px;
-    border-radius: 30px;
-    font-weight: 800;
-    transition: 0.3s;
-}
-
-nav a.login-btn:hover {
-    background: #e5a900;
-    color: #080808;
-}
-    
-    
 .hero {
-    min-height: 570px;
-    background: linear-gradient(90deg, #080808 35%, rgba(0,0,0,.35)),
-    url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1600') center/cover;
+    min-height: 650px;
+    position: relative;
+    overflow: hidden;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5,5,5,0.96) 0%,
+            rgba(5,5,5,0.82) 42%,
+            rgba(5,5,5,0.20) 100%
+        ),
+        url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1800')
+        center/cover no-repeat;
     display: flex;
     align-items: center;
-    padding: 70px 8%;
-    color: white;
+    padding: 80px 8%;
 }
 
 .hero-content {
-    max-width: 550px;
+    max-width: 650px;
+    position: relative;
+    z-index: 2;
+    animation: heroReveal 1s ease;
+}
+
+.hero-content::before {
+    content: "PB32  |  PREMIUM FOOTWEAR";
+    display: inline-block;
+    color: #e5a900;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
 }
 
 .hero h1 {
-    font-size: clamp(42px, 6vw, 72px);
+    font-size: clamp(48px, 7vw, 85px);
     font-weight: 900;
-    line-height: 1.1;
+    line-height: 1.05;
+    letter-spacing: -2px;
 }
 
 .hero h1 span {
@@ -121,245 +59,54 @@ nav a.login-btn:hover {
 }
 
 .hero p {
-    margin: 22px 0 30px;
-    line-height: 1.8;
-    color: #ddd;
+    max-width: 520px;
+    font-size: 15px;
+    line-height: 2;
+    color: #e0e0e0;
+    margin: 25px 0 35px;
 }
 
-.btn {
-    display: inline-block;
-    padding: 15px 32px;
-    background: #e5a900;
-    color: black;
-    text-decoration: none;
-    font-weight: 800;
-    border-radius: 4px;
-    transition: .3s;
+.hero .btn {
+    padding: 17px 35px;
+    border-radius: 40px;
+    background: linear-gradient(135deg, #e5a900, #ffdf70);
+    box-shadow: 0 8px 25px rgba(229,169,0,0.25);
+    transition: 0.3s ease;
 }
 
-.btn:hover {
-    background: white;
-    transform: translateY(-3px);
+.hero .btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(229,169,0,0.4);
 }
 
-.section {
-    padding: 75px 7%;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.section-title h2 {
-    font-size: 35px;
-    font-weight: 900;
-}
-
-.section-title p {
-    color: #777;
-    margin-top: 10px;
-}
-
-.categories {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-}
-
-.category {
-    height: 280px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    display:block;
-    text-decoration:none;
-    cursor:pointer;
-}
-
-.category img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: .4s;
-}
-
-.category:hover img {
-    transform: scale(1.08);
-}
-
-.category h3 {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    color: white;
-    font-size: 26px;
-    text-shadow: 0 2px 8px black;
-}
-
-.products {
-    background: white;
-}
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 22px;
-}
-
-.product-card {
-    background: #f7f7f7;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: .3s;
-}
-
-.product-card:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 10px 25px #0001;
-}
-
-.product-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-}
-
-.product-info {
-    padding: 18px;
-}
-
-.product-info h3 {
-    font-size: 16px;
-    margin-bottom: 9px;
-}
-
-.price {
-    color: #b47f00;
-    font-size: 19px;
-    font-weight: 800;
-    margin-bottom: 15px;
-}
-
-.product-info a {
-    display: block;
-    text-align: center;
-    background: #111;
-    color: white;
-    padding: 11px;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 700;
-    border-radius: 4px;
-}
-
-.product-info a:hover {
-    background: #e5a900;
-    color: black;
-}
-
-.banner {
-    background: #111;
-    color: white;
-    text-align: center;
-    padding: 75px 20px;
-}
-
-.banner h2 {
-    font-size: 38px;
-    margin-bottom: 15px;
-}
-
-.banner span {
-    color: #e5a900;
-}
-
-.banner p {
-    margin-bottom: 25px;
-    color: #ccc;
-}
-
-.about {
-    text-align: center;
-    max-width: 850px;
-    margin: auto;
-}
-
-.about p {
-    color: #666;
-    line-height: 1.9;
-    margin-top: 15px;
-}
-
-footer {
-    background: #080808;
-    color: white;
-    padding: 45px 7%;
-    text-align: center;
-}
-
-footer h2 {
-    font-size: 28px;
-    margin-bottom: 12px;
-}
-
-footer span {
-    color: #e5a900;
-}
-
-footer p {
-    color: #aaa;
-    font-size: 13px;
-    margin-top: 12px;
-}
-
-@media(max-width: 850px) {
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr);
+@keyframes heroReveal {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
     }
-
-    .categories {
-        grid-template-columns: 1fr;
-    }
-
-    nav {
-        gap: 12px;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-@media(max-width: 550px) {
-    header {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    nav {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    nav a {
-        font-size: 11px;
-    }
-
+@media(max-width:550px) {
     .hero {
-        min-height: 480px;
+        min-height: 520px;
+        padding: 60px 6%;
         background-position: 60% center;
     }
 
     .hero h1 {
-        font-size: 43px;
+        font-size: 45px;
     }
 
-    .product-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .section-title h2 {
-        font-size: 27px;
+    .hero-content::before {
+        font-size: 10px;
+        letter-spacing: 2px;
     }
 }
-</style>
+
 </head>
 
 <body>
