@@ -5,289 +5,447 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>PB32 SHOES | Categories</title>
+<title>PB32 SHOES | Explore Categories</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
 body {
-    background: #f8f7ff;
-    color: #24213b;
+    font-family: 'Montserrat', sans-serif;
+    color: #171717;
+    background: #fff;
+}
+
+a {
+    text-decoration: none;
 }
 
 /* HEADER */
+
 header {
-    background: #252044;
+    background: #080808;
     color: white;
-    padding: 20px 7%;
+    padding: 20px 6%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 20px;
 }
 
 .logo {
+    color: white;
     font-size: 27px;
     font-weight: 900;
 }
 
 .logo span {
-    color: #ffcf70;
+    color: #e5a900;
 }
 
 nav {
     display: flex;
-    gap: 20px;
+    align-items: center;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 nav a {
     color: white;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: bold;
+    font-size: 12px;
+    font-weight: 700;
+    transition: .3s;
 }
 
-nav a:hover {
-    color: #ffcf70;
+nav a:hover,
+nav a.active {
+    color: #e5a900;
 }
 
-/* HERO */
-.hero {
-    padding: 65px 20px;
+nav .nav-btn {
+    background: #e5a900;
+    color: #111;
+    padding: 11px 18px;
+    border-radius: 25px;
+}
+
+/* PAGE HERO */
+
+.page-hero {
+    min-height: 320px;
+    padding: 75px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    background: linear-gradient(120deg, #dcd5ff, #fce6d9);
+    color: white;
+
+    background:
+        linear-gradient(rgba(0,0,0,.78), rgba(0,0,0,.78)),
+        url('https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?w=1600')
+        center/cover no-repeat;
 }
 
-.hero small {
-    color: #6554a5;
-    font-weight: bold;
-    letter-spacing: 3px;
+.page-hero .small-title {
+    color: #e5a900;
+    letter-spacing: 4px;
+    font-size: 12px;
+    font-weight: 800;
+    margin-bottom: 18px;
 }
 
-.hero h1 {
-    font-size: 43px;
-    margin: 15px 0;
-    color: #29234c;
+.page-hero h1 {
+    font-size: clamp(35px, 6vw, 60px);
+    font-weight: 900;
+    margin-bottom: 18px;
 }
 
-.hero h1 span {
-    color: #7859c9;
+.page-hero h1 span {
+    color: #e5a900;
 }
 
-.hero p {
-    color: #5f5a70;
-    font-size: 16px;
-    line-height: 1.7;
+.page-hero p {
+    max-width: 600px;
+    line-height: 1.8;
+    color: #ddd;
+    font-size: 14px;
 }
 
-/* CATEGORY SECTION */
-.category-section {
-    padding: 35px 7% 10px;
+/* MAIN CONTENT */
+
+.catalogue {
+    padding: 75px 7%;
+}
+
+.section-heading {
     text-align: center;
+    margin-bottom: 35px;
 }
 
-.category-section h2 {
-    font-size: 25px;
-    margin-bottom: 20px;
+.section-heading h2 {
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 12px;
 }
 
-.category-buttons {
+.section-heading p {
+    color: #777;
+    font-size: 14px;
+}
+
+/* FILTER BUTTONS */
+
+.filter-buttons {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 12px;
+    margin-bottom: 30px;
 }
 
-.category-buttons button {
-    padding: 12px 23px;
-    border: 1px solid #d6ccef;
-    border-radius: 30px;
+.filter-btn {
+    border: 1px solid #ddd;
     background: white;
-    color: #45366e;
-    font-weight: bold;
+    color: #222;
+    padding: 12px 23px;
+    border-radius: 30px;
     cursor: pointer;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 800;
     transition: .3s;
 }
 
-.category-buttons button:hover,
-.category-buttons button.active {
-    background: #7054b8;
-    color: white;
-    border-color: #7054b8;
+.filter-btn:hover,
+.filter-btn.active {
+    background: #e5a900;
+    color: #111;
+    border-color: #e5a900;
 }
 
 /* SEARCH */
+
 .search-area {
-    padding: 25px 15px;
-    text-align: center;
+    max-width: 520px;
+    margin: 0 auto 45px;
+    position: relative;
 }
 
 .search-area input {
-    width: 90%;
-    max-width: 450px;
-    padding: 15px 20px;
-    border: 1px solid #d8d0ed;
-    border-radius: 30px;
-    outline: none;
-    font-size: 15px;
-}
-
-.search-area input:focus {
-    border-color: #7054b8;
-}
-
-.count {
-    text-align: center;
-    color: #716b83;
-    margin-bottom: 20px;
-}
-
-/* PRODUCTS */
-.products {
-    padding: 10px 7% 70px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-}
-
-.card {
-    background: white;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 5px 18px #30245b12;
-    transition: .3s;
-    border: 1px solid #eeeaf7;
-}
-
-.card:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 12px 25px #30245b20;
-}
-
-.image-box {
-    height: 205px;
-    background: #f1eff9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-.product-image {
     width: 100%;
-    height: 100%;
-    object-fit: contain;
-    padding: 12px;
-}
-
-.fallback {
-    font-size: 75px;
-}
-
-.details {
-    padding: 17px;
-}
-
-.tag {
-    display: inline-block;
-    padding: 6px 12px;
-    border-radius: 20px;
-    background: #eee8ff;
-    color: #7054b8;
-    font-size: 11px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.details h3 {
-    font-size: 15px;
-    min-height: 38px;
-    margin: 13px 0;
-    line-height: 1.4;
-}
-
-.price {
-    font-size: 22px;
-    font-weight: bold;
-    color: #6046a4;
-    margin-bottom: 15px;
-}
-
-.buy-btn {
-    display: block;
-    text-align: center;
-    padding: 12px;
-    border-radius: 7px;
-    background: #29234c;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+    padding: 17px 22px;
+    border: 1px solid #ddd;
+    border-radius: 35px;
+    outline: none;
+    font-family: inherit;
     font-size: 13px;
     transition: .3s;
 }
 
-.buy-btn:hover {
-    background: #7859c9;
+.search-area input:focus {
+    border-color: #e5a900;
+    box-shadow: 0 0 0 3px rgba(229,169,0,.12);
 }
 
-.empty {
+/* PRODUCT GRID */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #eee;
+    transition: .3s;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,.10);
+}
+
+.product-image {
+    height: 245px;
+    position: relative;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .4s;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.07);
+}
+
+.product-tag {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: #e5a900;
+    color: #111;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.product-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.product-info h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.product-category {
+    color: #888;
+    font-size: 11px;
+    margin-bottom: 12px;
+}
+
+.product-price {
+    color: #bd8900;
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 17px;
+}
+
+.shop-btn {
+    display: block;
+    background: #111;
+    color: white;
+    padding: 13px;
+    border-radius: 25px;
+    font-size: 11px;
+    font-weight: 800;
+    transition: .3s;
+}
+
+.shop-btn:hover {
+    background: #e5a900;
+    color: #111;
+}
+
+.no-results {
     display: none;
     text-align: center;
-    padding: 40px;
+    padding: 45px 15px;
     color: #777;
-    grid-column: 1 / -1;
+    line-height: 1.8;
+}
+
+/* PROMO BANNER */
+
+.promo {
+    background: #090909;
+    color: white;
+    padding: 65px 20px;
+    text-align: center;
+}
+
+.promo h2 {
+    font-size: clamp(27px, 5vw, 42px);
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.promo h2 span {
+    color: #e5a900;
+}
+
+.promo p {
+    color: #bbb;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.promo a {
+    display: inline-block;
+    background: #e5a900;
+    color: #111;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 900;
 }
 
 /* FOOTER */
-footer {
-    background: #252044;
+
+.footer {
+    background: #080808;
     color: white;
-    padding: 35px 15px;
-    text-align: center;
-    line-height: 2;
+    padding: 50px 7% 20px;
+    border-top: 1px solid #292929;
 }
 
-footer span {
-    color: #ffcf70;
+.footer-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 30px;
+}
+
+.footer-box h3 {
+    color: #e5a900;
+    font-size: 16px;
+    margin-bottom: 18px;
+}
+
+.footer-box p {
+    color: #aaa;
+    font-size: 12px;
+    line-height: 1.9;
+    margin-bottom: 10px;
+}
+
+.footer-box a {
+    display: block;
+    color: #aaa;
+    font-size: 12px;
+    margin-bottom: 13px;
+    transition: .3s;
+}
+
+.footer-box a:hover {
+    color: #e5a900;
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    margin-top: 35px;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.footer-bottom p {
+    color: #888;
+    font-size: 11px;
 }
 
 /* RESPONSIVE */
+
 @media(max-width: 950px) {
-    .products {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-container {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media(max-width: 550px) {
+@media(max-width: 600px) {
     header {
-        justify-content: center;
-        text-align: center;
+        flex-direction: column;
+        padding: 20px 5%;
     }
 
     nav {
         justify-content: center;
-        gap: 12px;
+        gap: 13px;
     }
 
     nav a {
-        font-size: 11px;
+        font-size: 10px;
     }
 
-    .hero h1 {
-        font-size: 30px;
+    .page-hero {
+        min-height: 280px;
+        padding: 55px 18px;
     }
 
-    .products {
+    .catalogue {
+        padding: 55px 5%;
+    }
+
+    .section-heading h2 {
+        font-size: 26px;
+    }
+
+    .filter-buttons {
+        gap: 8px;
+    }
+
+    .filter-btn {
+        padding: 10px 15px;
+        font-size: 10px;
+    }
+
+    .product-grid {
         grid-template-columns: 1fr;
-        padding-left: 8%;
-        padding-right: 8%;
+    }
+
+    .product-image {
+        height: 280px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
     }
 }
 </style>
@@ -295,260 +453,286 @@ footer span {
 
 <body>
 
+<!-- HEADER -->
+
 <header>
     <div class="logo">PB32 <span>SHOES.</span></div>
 
     <nav>
         <a href="index.html">HOME</a>
-        <a href="categories.html">CATEGORIES</a>
+        <a href="categories.html" class="active">CATEGORIES</a>
         <a href="product.html">COLLECTION</a>
         <a href="about.html">ABOUT</a>
         <a href="support.html">SUPPORT</a>
         <a href="contact.html">CONTACT</a>
+        <a href="signup.html" class="nav-btn">SIGN UP ↗</a>
+        <a href="login.html">LOGIN →</a>
     </nav>
 </header>
 
-<section class="hero">
-    <small>FIND YOUR PERFECT FIT</small>
-    <h1>EXPLORE <span>CATEGORIES</span></h1>
-    <p>Discover your favourite footwear. Find your style, choose your comfort<br>
-    and step forward with PB32 SHOES.</p>
+<!-- PAGE HERO -->
+
+<section class="page-hero">
+    <div class="small-title">PB32 PREMIUM FOOTWEAR</div>
+
+    <h1>EXPLORE <span>CATEGORIES.</span></h1>
+
+    <p>
+        Discover your favourite footwear.
+        Find your style, choose your comfort
+        and step forward with PB32 SHOES.
+    </p>
 </section>
 
-<section class="category-section">
-    <h2>SHOP BY CATEGORY</h2>
+<!-- PRODUCT CATALOGUE -->
 
-    <div class="category-buttons">
-        <button class="active" onclick="filterProducts('all',this)">ALL SHOES</button>
-        <button onclick="filterProducts('men',this)">MEN</button>
-        <button onclick="filterProducts('women',this)">WOMEN</button>
-        <button onclick="filterProducts('premium',this)">PREMIUM</button>
-        <button onclick="filterProducts('sports',this)">SPORTS</button>
+<section class="catalogue">
+
+    <div class="section-heading">
+        <h2>FIND YOUR PERFECT FIT</h2>
+        <p>Explore our footwear collection.</p>
     </div>
+
+    <!-- FILTER BUTTONS -->
+
+    <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">ALL SHOES</button>
+        <button class="filter-btn" data-filter="men">MEN</button>
+        <button class="filter-btn" data-filter="women">WOMEN</button>
+        <button class="filter-btn" data-filter="premium">PREMIUM</button>
+        <button class="filter-btn" data-filter="sports">SPORTS</button>
+    </div>
+
+    <!-- SEARCH -->
+
+    <div class="search-area">
+        <input
+            type="search"
+            id="searchInput"
+            placeholder="Search shoes by name..."
+            aria-label="Search shoes by name"
+        >
+    </div>
+
+    <!-- PRODUCTS -->
+
+    <div class="product-grid" id="productGrid">
+
+        <article class="product-card" data-category="men premium">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=700" alt="Classic Red Sneakers">
+                <span class="product-tag">POPULAR</span>
+            </div>
+            <div class="product-info">
+                <h3>Classic Red Sneakers</h3>
+                <p class="product-category">Men's / Premium</p>
+                <div class="product-price">₹1,499</div>
+                <a href="product.html" class="shop-btn">EXPLORE PRODUCT →</a>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="sports premium">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=700" alt="Premium Sports Shoes">
+                <span class="product-tag">SPORTS</span>
+            </div>
+            <div class="product-info">
+                <h3>Premium Sports Shoes</h3>
+                <p class="product-category">Sports / Premium</p>
+                <div class="product-price">₹1,799</div>
+                <a href="product.html" class="shop-btn">EXPLORE PRODUCT →</a>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="men">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=700" alt="Urban Casual Shoes">
+            </div>
+            <div class="product-info">
+                <h3>Urban Casual Shoes</h3>
+                <p class="product-category">Men's / Casual</p>
+                <div class="product-price">₹1,299</div>
+                <a href="product.html" class="shop-btn">EXPLORE PRODUCT →</a>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="women premium">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=700" alt="Women's Fashion Shoes">
+                <span class="product-tag">FASHION</span>
+            </div>
+            <div class="product-info">
+                <h3>Women's Fashion Shoes</h3>
+                <p class="product-category">Women's / Premium</p>
+                <div class="product-price">₹1,599</div>
+                <a href="product.html" class="shop-btn">EXPLORE PRODUCT →</a>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="men">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?w=700" alt="Street Style Sneakers">
+            </div>
+            <div class="product-info">
+                <h3>Street Style Sneakers</h3>
+                <p class="product-category">Men's / Casual</p>
+                <div class="product-price">₹1,599</div>
+                <a href="product.html" class="shop-btn">EXPLORE PRODUCT →</a>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="women">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=700" alt="Women's Everyday Footwear">
+            </div>
+            <div class="product-info">
+                <h3>Women's Everyday Footwear</h3>
+                <p class="product-category">Women's / Casual</p>
+                <div class="product-price">₹1,399</div>
+                <a href="product.html" class="shop-btn">EXPLORE PRODUCT →</a>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="sports">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1539185441755-769473a23570?w=700" alt="Running Shoes">
+                <span class="product-tag">SPORTS</span>
+            </div>
+            <div class="product-info">
+                <h3>Running Sports Shoes</h3>
+                <p class="product-category">Sports / Running</p>
+                <div class="product-price">₹1,699</div>
+                <a href="product.html" class="shop-btn">EXPLORE PRODUCT →</a>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="women premium">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=700" alt="Premium Women's Sneakers">
+                <span class="product-tag">PREMIUM</span>
+            </div>
+            <div class="product-info">
+                <h3>Premium Women's Sneakers</h3>
+                <p class="product-category">Women's / Premium</p>
+                <div class="product-price">₹1,899</div>
+                <a href="product.html" class="shop-btn">EXPLORE PRODUCT →</a>
+            </div>
+        </article>
+
+    </div>
+
+    <div class="no-results" id="noResults">
+        <h3>No shoes found!</h3>
+        <p>Try another search or select a different category.</p>
+    </div>
+
 </section>
 
-<div class="search-area">
-    <input type="text" id="search"
-    placeholder="Search shoes by name...">
-</div>
+<!-- PROMO -->
 
-<div class="count" id="count"></div>
-
-<section class="products" id="productList">
+<section class="promo">
+    <h2>YOUR STYLE. <span>YOUR STEPS.</span></h2>
+    <p>Find your favourite look and make every step count.</p>
+    <a href="product.html">VIEW COLLECTION →</a>
 </section>
 
-<footer>
-    <h2>PB32 <span>SHOES.</span></h2>
-    <p>Find Your Style. Feel Your Comfort.</p>
-    <p>© 2026 PB32 SHOES. All Rights Reserved.</p>
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-box">
+            <h2 class="logo">PB32 <span>SHOES.</span></h2>
+            <p>
+                Discover stylish footwear and find
+                your perfect everyday look with PB32 SHOES.
+            </p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="categories.html">Categories</a>
+            <a href="product.html">Collection</a>
+            <a href="about.html">About Us</a>
+        </div>
+
+        <div class="footer-box">
+            <h3>Customer Support</h3>
+            <a href="support.html">Support</a>
+            <a href="payment-support.html">Payment Support</a>
+            <a href="order-support.html">Order Support</a>
+            <a href="return.html">Returns & Exchanges</a>
+        </div>
+
+        <div class="footer-box">
+            <h3>Contact Us</h3>
+            <p>📍 Nawanshahr, Punjab</p>
+            <p>📧 creativeduniya97@gmail.com</p>
+            <p>📞 +91 96581 45896</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 PB32 SHOES. All Rights Reserved.</p>
+        <p>Designed with ❤️</p>
+    </div>
+
 </footer>
 
+<!-- FILTER AND SEARCH JAVASCRIPT -->
+
 <script>
+const filterButtons = document.querySelectorAll(".filter-btn");
+const products = document.querySelectorAll(".product-card");
+const searchInput = document.getElementById("searchInput");
+const noResults = document.getElementById("noResults");
 
-const products = [
+let selectedCategory = "all";
 
-{
-name: "Men's Running Shoes",
-category: "men",
-type: "sports",
-price: 1459,
-image: "https://th.bing.com/th/id/OIP.-25DT6-n_ENbr3Uy5v2PtQHaJ4?w=142&h=190&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
-},
+function filterProducts() {
+    const searchText = searchInput.value.toLowerCase().trim();
+    let visibleCount = 0;
 
-{
-name: "Men's Shoes",
-category: "men",
-type: "casual",
-price: 1459,
-image: "https://tse1.mm.bing.net/th/id/OIP.V3kAZHRQzsw93eoNmhHy-AHaI4?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-},
-
-{
-name: "Black Men's Shoes",
-category: "men",
-type: "premium",
-price: 1789,
-image: "https://th.bing.com/th/id/OIP.FH-uY0Nmg5XJS9IWUOc7zwHaHa?w=183&h=183&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
-},
-
-{
-name: "Men's Shoes",
-category: "men",
-type: "casual",
-price: 1589,
-image: "https://th.bing.com/th/id/OIP.6VFn3CCNXay2EqkpICEcAwHaJ4?w=134&h=183&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
-},
-
-{
-name: "ENCORE White Men's Sneakers",
-category: "men",
-type: "casual",
-price: 1289,
-image: "https://th.bing.com/th/id/OIP.l7xvkN_8Ku-vmq0pJqlZmwHaJ4?w=133&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
-},
-
-{
-name: "TRASKO Women's Shoes",
-category: "women",
-type: "casual",
-price: 1459,
-image: "data:image/webp;base64,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"
-},
-
-{
-name: "KRIVO Men's Running Shoes",
-category: "men",
-type: "sports",
-price: 1159,
-image: "https://th.bing.com/th/id/OIP.pXJVNw2Ngec7MwtxE--3YQHaFW?w=257&h=185&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
-},
-
-{
-name: "Women's Heel",
-category: "women",
-type: "casual",
-price: 1149,
-image: "https://th.bing.com/th/id/OIP.fMQAzLwDstk0oiR9ovLX_wHaHa?w=155&h=150&c=6&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
-},
-
-{
-name: "AMBIT Women's Sneakers",
-category: "women",
-type: "premium",
-price: 1959,
-image: "https://th.bing.com/th/id/OIP.UKzOHGC6XG8Sk098Sv3TrgHaHa?w=190&h=187&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
-},
-
-{
-name: "CYMBAL Women's Running Shoes",
-category: "women",
-type: "sports",
-price: 1549,
-image: "https://th.bing.com/th/id/OIP.kPcjE25ejlpIgztH9qzRQwHaHa?w=175&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
-},
-
-{
-name: "Women's Belly",
-category: "women",
-type: "casual",
-price: 1199,
-image: "https://th.bing.com/th?q=Fancy+Black+Dress+Shoes+for+Women&w=120&h=120&c=1&rs=1&qlt=70&r=0&o=7&cb=1&dpr=1.3&pid=InlineBlock&rm=3&mkt=en-IN&cc=IN&setlang=en&adlt=moderate&t=1&mw=247"
-},
-
-{
-name: "New Balance 204V",
-category: "premium",
-type: "premium",
-price: 12999,
-image: ""
-},
-
-{
-name: "Air Jordan 1 Mid",
-category: "premium",
-type: "premium",
-price: 11495,
-image: "https://th.bing.com/th/id/OIP.2SPIY-DN9ofnKGZZCahlvAHaE0?w=205&h=133&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
-},
-
-{
-name: "Nike Dunk Low Retro",
-category: "premium",
-type: "premium",
-price: 8295,
-image: "https://th.bing.com/th/id/OIP.RcY5ByT8KHayuug280uO1wHaHa?w=205&h=205&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
-}
-
-];
-
-let currentFilter = "all";
-
-function renderProducts() {
-
-    const list = document.getElementById("productList");
-    const search = document.getElementById("search").value.toLowerCase().trim();
-
-    list.innerHTML = "";
-
-    const filtered = products.filter(product => {
+    products.forEach(product => {
+        const categories = product.dataset.category.split(" ");
+        const productName = product.querySelector("h3").textContent.toLowerCase();
+        const productCategory = product.querySelector(".product-category").textContent.toLowerCase();
 
         const categoryMatch =
-            currentFilter === "all" ||
-            product.category === currentFilter ||
-            product.type === currentFilter;
+            selectedCategory === "all" ||
+            categories.includes(selectedCategory);
 
-        return categoryMatch &&
-            product.name.toLowerCase().includes(search);
+        const searchMatch =
+            productName.includes(searchText) ||
+            productCategory.includes(searchText);
+
+        if (categoryMatch && searchMatch) {
+            product.style.display = "block";
+            visibleCount++;
+        } else {
+            product.style.display = "none";
+        }
     });
 
-    document.getElementById("count").textContent =
-        filtered.length + " shoes found";
+    noResults.style.display = visibleCount === 0 ? "block" : "none";
+}
 
-    if (filtered.length === 0) {
-        list.innerHTML = '<div class="empty" style="display:block">No shoes found. Try another search.</div>';
-        return;
-    }
+filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        filterButtons.forEach(btn => btn.classList.remove("active"));
 
-    filtered.forEach(product => {
+        button.classList.add("active");
+        selectedCategory = button.dataset.filter;
 
-        const card = document.createElement("div");
-        card.className = "card";
-
-        const label = product.category === "premium"
-            ? "Premium"
-            : product.type === "sports"
-            ? "Sports"
-            : product.category === "women"
-            ? "Women's"
-            : "Men's";
-
-        const imageHTML = product.image
-            ? `<img class="product-image"
-                src="${product.image}"
-                alt="${product.name}"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-               <div class="fallback" style="display:none">👟</div>`
-            : `<div class="fallback">👟</div>`;
-
-        card.innerHTML = `
-            <div class="image-box">
-                ${imageHTML}
-            </div>
-
-            <div class="details">
-                <span class="tag">${label}</span>
-                <h3>${product.name}</h3>
-                <div class="price">₹${product.price.toLocaleString("en-IN")}</div>
-                <a class="buy-btn"
-                   href="shopnow.html?product=${encodeURIComponent(product.name)}">
-                   SHOP NOW
-                </a>
-            </div>
-        `;
-
-        list.appendChild(card);
+        filterProducts();
     });
-}
+});
 
-function filterProducts(category, button) {
-
-    currentFilter = category;
-
-    document.querySelectorAll(".category-buttons button")
-        .forEach(btn => btn.classList.remove("active"));
-
-    button.classList.add("active");
-
-    renderProducts();
-}
-
-document.getElementById("search")
-    .addEventListener("input", renderProducts);
-
-renderProducts();
-
+searchInput.addEventListener("input", filterProducts);
 </script>
 
 </body>
 </html>
-```
