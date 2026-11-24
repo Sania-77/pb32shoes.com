@@ -494,8 +494,15 @@ nav .login-btn {
         <a href="about.html">ABOUT</a>
         <a href="support.html">SUPPORT</a>
         <a href="contact.html">CONTACT</a>
-        <a href="signup.html" class="signup-btn">SIGN UP ↗</a>
-        <a href="login.html" class="login-btn">LOGIN →</a>
+        <span id="guestLinks">
+    <a href="signup.html" class="signup-btn">SIGN UP ↗</a>
+    <a href="login.html" class="login-btn">LOGIN →</a>
+</span>
+
+<span id="userLinks" style="display:none;">
+    <a href="dashboard.html" class="signup-btn">MY ACCOUNT</a>
+    <a href="#" class="login-btn" id="logoutBtn">LOGOUT</a>
+</span>
     </nav>
 </header>
 
@@ -673,5 +680,60 @@ nav .login-btn {
     </div>
 </footer>
 
+
+    <script type="module">
+
+import { initializeApp } from
+"https://www.gstatic.com/firebasejs/13.3.0/firebase-app.js";
+
+import {
+    getAuth,
+    onAuthStateChanged,
+    signOut
+} from
+"https://www.gstatic.com/firebasejs/13.3.0/firebase-auth.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyA9LFfkR_flA6Y2W3oKEtJSSKytgqty1zQ",
+    authDomain: "pb32-shoes.firebaseapp.com",
+    projectId: "pb32-shoes",
+    storageBucket: "pb32-shoes.firebasestorage.app",
+    messagingSenderId: "535811826741",
+    appId: "1:535811826741:web:71b0aff54f39350ce43d7c"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+const guestLinks = document.getElementById("guestLinks");
+const userLinks = document.getElementById("userLinks");
+const logoutBtn = document.getElementById("logoutBtn");
+
+onAuthStateChanged(auth, (user) => {
+
+    if (user) {
+        guestLinks.style.display = "none";
+        userLinks.style.display = "inline-flex";
+    } else {
+        guestLinks.style.display = "inline-flex";
+        userLinks.style.display = "none";
+    }
+
+});
+
+logoutBtn.addEventListener("click", async (e) => {
+
+    e.preventDefault();
+
+    try {
+        await signOut(auth);
+        window.location.href = "index.html";
+    } catch (error) {
+        alert("Logout failed. Please try again.");
+    }
+
+});
+
+</script>
 </body>
 </html>
